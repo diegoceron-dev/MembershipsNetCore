@@ -1,0 +1,73 @@
+2023-10-10 14:14:48.503 -06:00 [INF] Registered 5 endpoints in 2488 milliseconds.
+2023-10-10 14:14:52.118 -06:00 [INF] Executed DbCommand (79ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-10 14:14:52.278 -06:00 [INF] Executed DbCommand (110ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-10-10 14:14:52.707 -06:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Contributors] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Contributors] PRIMARY KEY ([Id])
+);
+2023-10-10 14:14:53.769 -06:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-10 14:14:53.903 -06:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name], [c].[Status]
+FROM [Contributors] AS [c]
+2023-10-10 14:14:54.673 -06:00 [INF] Executed DbCommand (153ms) [Parameters=[@p0='?' (Size = 100), @p1='?' (DbType = Int32), @p2='?' (Size = 100), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [Contributors] USING (
+VALUES (@p0, @p1, 0),
+(@p2, @p3, 1)) AS i ([Name], [Status], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Name], [Status])
+VALUES (i.[Name], i.[Status])
+OUTPUT INSERTED.[Id], i._Position;
+2023-10-10 14:14:55.048 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-10 14:14:55.050 -06:00 [INF] Hosting environment: Development
+2023-10-10 14:14:55.051 -06:00 [INF] Content root path: C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web
+2023-10-10 14:14:55.135 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger - -
+2023-10-10 14:14:55.555 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/index.html - -
+2023-10-10 14:14:55.579 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger - - - 302 - - 448.6541ms
+2023-10-10 14:14:56.482 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/index.html - - - 200 - text/html;+charset=utf-8 926.2502ms
+2023-10-10 14:14:56.565 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - -
+2023-10-10 14:14:56.601 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - - - 200 12376 application/javascript;+charset=utf-8 25.0593ms
+2023-10-10 14:14:57.007 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_vs/browserLink - -
+2023-10-10 14:14:57.058 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 51.8991ms
+2023-10-10 14:14:57.415 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - -
+2023-10-10 14:14:57.459 -06:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-10-10 14:14:59.151 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - - - 200 - application/json;+charset=utf-8 1736.1196ms
+2023-10-10 14:16:09.806 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Contributors application/json 32
+2023-10-10 14:16:09.841 -06:00 [INF] Executing endpoint 'HTTP: POST /Contributors'
+2023-10-10 14:16:10.236 -06:00 [INF] Handling CreateContributorCommand
+2023-10-10 14:16:10.240 -06:00 [INF] Property Name : Contributor Name
+2023-10-10 14:16:10.524 -06:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (Size = 100), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Contributors] ([Name], [Status])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1);
+2023-10-10 14:16:10.559 -06:00 [INF] Handled CreateContributorCommand with Ardalis.Result.Result`1[System.Int32] in 318 ms
+2023-10-10 14:16:10.596 -06:00 [INF] Executed endpoint 'HTTP: POST /Contributors'
+2023-10-10 14:16:10.606 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Contributors application/json 32 - 200 - application/json 803.3521ms
