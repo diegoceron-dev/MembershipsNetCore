@@ -1,4 +1,4 @@
-﻿using MembershipsNetCore.Core.ContributorAggregate;
+﻿ using MembershipsNetCore.Core.ContributorAggregate;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

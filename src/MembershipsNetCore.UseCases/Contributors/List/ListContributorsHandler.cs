@@ -10,7 +10,7 @@ public class ListContributorsHandler : IQueryHandler<ListContributorsQuery, Resu
   public ListContributorsHandler(IListContributorsQueryService query)
   {
     _query = query;
-  }
+  }   
 
   public async Task<Result<IEnumerable<ContributorDTO>>> Handle(ListContributorsQuery request, CancellationToken cancellationToken)
   {

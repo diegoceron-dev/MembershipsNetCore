@@ -2,7 +2,6 @@
 using Ardalis.SharedKernel;
 using FastEndpoints;
 using MembershipsNetCore.Web.Endpoints.ContributorEndpoints;
-using MembershipsNetCore.UseCases.Contributors.List;
 using MembershipsNetCore.UseCases.Contributors.Create;
 using MediatR;
 

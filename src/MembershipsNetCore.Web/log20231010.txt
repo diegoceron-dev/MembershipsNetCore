@@ -71,3 +71,740 @@ VALUES (@p0, @p1);
 2023-10-10 14:16:10.559 -06:00 [INF] Handled CreateContributorCommand with Ardalis.Result.Result`1[System.Int32] in 318 ms
 2023-10-10 14:16:10.596 -06:00 [INF] Executed endpoint 'HTTP: POST /Contributors'
 2023-10-10 14:16:10.606 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Contributors application/json 32 - 200 - application/json 803.3521ms
+2023-10-10 14:46:34.783 -06:00 [INF] Registered 5 endpoints in 2040 milliseconds.
+2023-10-10 14:46:37.311 -06:00 [INF] Executed DbCommand (47ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-10 14:46:37.411 -06:00 [INF] Executed DbCommand (61ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-10-10 14:46:38.060 -06:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-10 14:46:38.249 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-10 14:46:38.250 -06:00 [INF] Hosting environment: Development
+2023-10-10 14:46:38.251 -06:00 [INF] Content root path: C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web
+2023-10-10 14:46:38.333 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger - -
+2023-10-10 14:46:38.613 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/index.html - -
+2023-10-10 14:46:38.637 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger - - - 302 - - 311.1550ms
+2023-10-10 14:46:39.192 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/index.html - - - 200 - text/html;+charset=utf-8 579.5460ms
+2023-10-10 14:46:39.247 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - -
+2023-10-10 14:46:39.254 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - - - 200 12376 application/javascript;+charset=utf-8 6.3151ms
+2023-10-10 14:46:39.471 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_vs/browserLink - -
+2023-10-10 14:46:39.517 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 46.1451ms
+2023-10-10 14:46:40.075 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - -
+2023-10-10 14:46:40.107 -06:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-10-10 14:46:42.297 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - - - 200 - application/json;+charset=utf-8 2221.8669ms
+2023-10-10 14:46:48.210 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/Contributors - -
+2023-10-10 14:46:48.245 -06:00 [INF] Executing endpoint 'HTTP: GET /Contributors'
+2023-10-10 14:46:48.329 -06:00 [INF] Handling ListContributorsQuery
+2023-10-10 14:46:48.331 -06:00 [INF] Property Skip : null
+2023-10-10 14:46:48.331 -06:00 [INF] Property Take : null
+2023-10-10 14:46:48.340 -06:00 [INF] Handled ListContributorsQuery with Ardalis.Result.Result`1[System.Collections.Generic.IEnumerable`1[MembershipsNetCore.UseCases.Contributors.ContributorDTO]] in 7 ms
+2023-10-10 14:46:48.500 -06:00 [INF] Executed endpoint 'HTTP: GET /Contributors'
+2023-10-10 14:46:48.501 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/Contributors - - - 200 - application/json 290.9114ms
+2023-10-10 14:46:51.818 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/Contributors - -
+2023-10-10 14:46:51.819 -06:00 [INF] Executing endpoint 'HTTP: GET /Contributors'
+2023-10-10 14:46:51.820 -06:00 [INF] Handling ListContributorsQuery
+2023-10-10 14:46:51.821 -06:00 [INF] Property Skip : null
+2023-10-10 14:46:51.821 -06:00 [INF] Property Take : null
+2023-10-10 14:46:51.822 -06:00 [INF] Handled ListContributorsQuery with Ardalis.Result.Result`1[System.Collections.Generic.IEnumerable`1[MembershipsNetCore.UseCases.Contributors.ContributorDTO]] in 0 ms
+2023-10-10 14:46:51.824 -06:00 [INF] Executed endpoint 'HTTP: GET /Contributors'
+2023-10-10 14:46:51.825 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/Contributors - - - 200 - application/json 7.1918ms
+2023-10-10 14:47:05.730 -06:00 [INF] Request starting HTTP/2 DELETE https://localhost:44325/Contributors/1 - -
+2023-10-10 14:47:05.744 -06:00 [INF] Executing endpoint 'HTTP: DELETE /Contributors/{ContributorId:int}'
+2023-10-10 14:47:05.834 -06:00 [INF] Handling DeleteContributorCommand
+2023-10-10 14:47:05.835 -06:00 [INF] Property ContributorId : 1
+2023-10-10 14:47:05.848 -06:00 [INF] Deleting Contributor 1
+2023-10-10 14:47:06.710 -06:00 [INF] Executed DbCommand (156ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Name], [c].[Status]
+FROM [Contributors] AS [c]
+WHERE [c].[Id] = @__p_0
+2023-10-10 14:47:07.295 -06:00 [INF] Executed DbCommand (14ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Contributors]
+OUTPUT 1
+WHERE [Id] = @p0;
+2023-10-10 14:47:07.345 -06:00 [INF] Handling Contributed Deleted event for 1
+2023-10-10 14:47:07.353 -06:00 [INF] Handled DeleteContributorCommand with Ardalis.Result.Result in 1517 ms
+2023-10-10 14:47:07.366 -06:00 [INF] Executed endpoint 'HTTP: DELETE /Contributors/{ContributorId:int}'
+2023-10-10 14:47:07.380 -06:00 [INF] Request finished HTTP/2 DELETE https://localhost:44325/Contributors/1 - - - 204 - - 1650.5337ms
+2023-10-10 14:47:20.018 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/Contributors/1 - -
+2023-10-10 14:47:20.020 -06:00 [INF] Executing endpoint 'HTTP: GET /Contributors/{ContributorId:int}'
+2023-10-10 14:47:20.046 -06:00 [INF] Handling GetContributorQuery
+2023-10-10 14:47:20.047 -06:00 [INF] Property ContributorId : 1
+2023-10-10 14:47:20.190 -06:00 [INF] Executed DbCommand (5ms) [Parameters=[@__contributorId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Name], [c].[Status]
+FROM [Contributors] AS [c]
+WHERE [c].[Id] = @__contributorId_0
+2023-10-10 14:47:20.211 -06:00 [INF] Handled GetContributorQuery with Ardalis.Result.Result`1[MembershipsNetCore.UseCases.Contributors.ContributorDTO] in 162 ms
+2023-10-10 14:47:20.215 -06:00 [INF] Executed endpoint 'HTTP: GET /Contributors/{ContributorId:int}'
+2023-10-10 14:47:20.218 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/Contributors/1 - - - 404 - - 199.5008ms
+2023-10-10 14:47:23.598 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/Contributors/2 - -
+2023-10-10 14:47:23.599 -06:00 [INF] Executing endpoint 'HTTP: GET /Contributors/{ContributorId:int}'
+2023-10-10 14:47:23.599 -06:00 [INF] Handling GetContributorQuery
+2023-10-10 14:47:23.600 -06:00 [INF] Property ContributorId : 2
+2023-10-10 14:47:23.613 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[@__contributorId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Name], [c].[Status]
+FROM [Contributors] AS [c]
+WHERE [c].[Id] = @__contributorId_0
+2023-10-10 14:47:23.618 -06:00 [INF] Handled GetContributorQuery with Ardalis.Result.Result`1[MembershipsNetCore.UseCases.Contributors.ContributorDTO] in 17 ms
+2023-10-10 14:47:23.619 -06:00 [INF] Executed endpoint 'HTTP: GET /Contributors/{ContributorId:int}'
+2023-10-10 14:47:23.620 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/Contributors/2 - - - 200 - application/json 21.3148ms
+2023-10-10 14:47:26.307 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/Contributors/3 - -
+2023-10-10 14:47:26.307 -06:00 [INF] Executing endpoint 'HTTP: GET /Contributors/{ContributorId:int}'
+2023-10-10 14:47:26.307 -06:00 [INF] Handling GetContributorQuery
+2023-10-10 14:47:26.308 -06:00 [INF] Property ContributorId : 3
+2023-10-10 14:47:26.314 -06:00 [INF] Executed DbCommand (3ms) [Parameters=[@__contributorId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Name], [c].[Status]
+FROM [Contributors] AS [c]
+WHERE [c].[Id] = @__contributorId_0
+2023-10-10 14:47:26.316 -06:00 [INF] Handled GetContributorQuery with Ardalis.Result.Result`1[MembershipsNetCore.UseCases.Contributors.ContributorDTO] in 8 ms
+2023-10-10 14:47:26.317 -06:00 [INF] Executed endpoint 'HTTP: GET /Contributors/{ContributorId:int}'
+2023-10-10 14:47:26.318 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/Contributors/3 - - - 200 - application/json 11.7301ms
+2023-10-10 14:47:27.876 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/Contributors/4 - -
+2023-10-10 14:47:27.877 -06:00 [INF] Executing endpoint 'HTTP: GET /Contributors/{ContributorId:int}'
+2023-10-10 14:47:27.878 -06:00 [INF] Handling GetContributorQuery
+2023-10-10 14:47:27.878 -06:00 [INF] Property ContributorId : 4
+2023-10-10 14:47:27.886 -06:00 [INF] Executed DbCommand (5ms) [Parameters=[@__contributorId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Name], [c].[Status]
+FROM [Contributors] AS [c]
+WHERE [c].[Id] = @__contributorId_0
+2023-10-10 14:47:27.887 -06:00 [INF] Handled GetContributorQuery with Ardalis.Result.Result`1[MembershipsNetCore.UseCases.Contributors.ContributorDTO] in 8 ms
+2023-10-10 14:47:27.888 -06:00 [INF] Executed endpoint 'HTTP: GET /Contributors/{ContributorId:int}'
+2023-10-10 14:47:27.888 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/Contributors/4 - - - 404 - - 12.0596ms
+2023-10-10 14:48:28.055 -06:00 [INF] Request starting HTTP/2 PUT https://localhost:44325/Contributors/2 application/json 56
+2023-10-10 14:48:28.056 -06:00 [INF] Executing endpoint 'HTTP: PUT /Contributors/{ContributorId:int}'
+2023-10-10 14:48:28.179 -06:00 [INF] Handling UpdateContributorCommand
+2023-10-10 14:48:28.180 -06:00 [INF] Property ContributorId : 2
+2023-10-10 14:48:28.180 -06:00 [INF] Property NewName : Diego Ceron
+2023-10-10 14:48:28.228 -06:00 [INF] Executed DbCommand (14ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Name], [c].[Status]
+FROM [Contributors] AS [c]
+WHERE [c].[Id] = @__p_0
+2023-10-10 14:48:28.308 -06:00 [INF] Executed DbCommand (21ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (Size = 100), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Contributors] SET [Name] = @p0, [Status] = @p1
+OUTPUT 1
+WHERE [Id] = @p2;
+2023-10-10 14:48:28.326 -06:00 [INF] Handled UpdateContributorCommand with Ardalis.Result.Result`1[MembershipsNetCore.UseCases.Contributors.ContributorDTO] in 145 ms
+2023-10-10 14:48:28.334 -06:00 [INF] Executed endpoint 'HTTP: PUT /Contributors/{ContributorId:int}'
+2023-10-10 14:48:28.335 -06:00 [INF] Request finished HTTP/2 PUT https://localhost:44325/Contributors/2 application/json 56 - 200 - application/json 282.8383ms
+2023-10-10 14:58:24.269 -06:00 [INF] Registered 5 endpoints in 2283 milliseconds.
+2023-10-10 14:58:27.702 -06:00 [INF] Executed DbCommand (85ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-10 14:58:27.901 -06:00 [INF] Executed DbCommand (118ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-10-10 14:58:28.751 -06:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-10 14:58:28.913 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-10 14:58:28.914 -06:00 [INF] Hosting environment: Development
+2023-10-10 14:58:28.914 -06:00 [INF] Content root path: C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web
+2023-10-10 14:58:28.966 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger - -
+2023-10-10 14:58:29.183 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/index.html - -
+2023-10-10 14:58:29.193 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger - - - 302 - - 230.5242ms
+2023-10-10 14:58:29.673 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/index.html - - - 200 - text/html;+charset=utf-8 489.2618ms
+2023-10-10 14:58:29.720 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - -
+2023-10-10 14:58:29.736 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - - - 200 12376 application/javascript;+charset=utf-8 12.9691ms
+2023-10-10 14:58:30.042 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_vs/browserLink - -
+2023-10-10 14:58:30.085 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 43.4385ms
+2023-10-10 14:58:30.777 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - -
+2023-10-10 14:58:30.805 -06:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-10-10 14:58:32.495 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - - - 200 - application/json;+charset=utf-8 1715.9783ms
+2023-10-10 15:01:43.537 -06:00 [INF] Request starting HTTP/2 DELETE https://localhost:44325/Contributors/2 - -
+2023-10-10 15:01:43.556 -06:00 [INF] Executing endpoint 'HTTP: DELETE /Contributors/{ContributorId:int}'
+2023-10-10 15:02:15.777 -06:00 [INF] Handling DeleteContributorCommand
+2023-10-10 15:02:15.778 -06:00 [INF] Property ContributorId : 2
+2023-10-10 15:02:15.785 -06:00 [INF] Deleting Contributor 2
+2023-10-10 15:02:16.303 -06:00 [INF] Executed DbCommand (151ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Name], [c].[Status]
+FROM [Contributors] AS [c]
+WHERE [c].[Id] = @__p_0
+2023-10-10 15:02:16.619 -06:00 [INF] Executed DbCommand (15ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Contributors]
+OUTPUT 1
+WHERE [Id] = @p0;
+2023-10-10 15:02:16.670 -06:00 [INF] Handling Contributed Deleted event for 2
+2023-10-10 15:02:16.676 -06:00 [INF] Handled DeleteContributorCommand with Ardalis.Result.Result in 897 ms
+2023-10-10 15:02:44.236 -06:00 [INF] Executed endpoint 'HTTP: DELETE /Contributors/{ContributorId:int}'
+2023-10-10 15:02:44.250 -06:00 [INF] Request finished HTTP/2 DELETE https://localhost:44325/Contributors/2 - - - 204 - - 60713.2803ms
+2023-10-10 15:03:06.936 -06:00 [INF] Request starting HTTP/2 DELETE https://localhost:44325/Contributors/3 - -
+2023-10-10 15:03:06.938 -06:00 [INF] Executing endpoint 'HTTP: DELETE /Contributors/{ContributorId:int}'
+2023-10-10 15:03:27.929 -06:00 [INF] Handling DeleteContributorCommand
+2023-10-10 15:03:27.930 -06:00 [INF] Property ContributorId : 3
+2023-10-10 15:03:27.936 -06:00 [INF] Deleting Contributor 3
+2023-10-10 15:03:28.060 -06:00 [INF] Executed DbCommand (91ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Name], [c].[Status]
+FROM [Contributors] AS [c]
+WHERE [c].[Id] = @__p_0
+2023-10-10 15:03:28.153 -06:00 [INF] Executed DbCommand (23ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Contributors]
+OUTPUT 1
+WHERE [Id] = @p0;
+2023-10-10 15:03:28.159 -06:00 [INF] Handling Contributed Deleted event for 3
+2023-10-10 15:03:28.174 -06:00 [INF] Handled DeleteContributorCommand with Ardalis.Result.Result in 243 ms
+2023-10-10 15:03:31.460 -06:00 [INF] Executed endpoint 'HTTP: DELETE /Contributors/{ContributorId:int}'
+2023-10-10 15:03:31.462 -06:00 [INF] Request finished HTTP/2 DELETE https://localhost:44325/Contributors/3 - - - 204 - - 24526.4962ms
+2023-10-10 18:23:28.968 -06:00 [INF] Registered 6 endpoints in 2415 milliseconds.
+2023-10-10 18:23:30.817 -06:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-10 18:23:30.891 -06:00 [INF] Executed DbCommand (56ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-10-10 18:23:31.231 -06:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-10 18:23:31.284 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name], [c].[Status]
+FROM [Contributors] AS [c]
+2023-10-10 18:23:31.573 -06:00 [INF] Executed DbCommand (54ms) [Parameters=[@p0='?' (Size = 100), @p1='?' (DbType = Int32), @p2='?' (Size = 100), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [Contributors] USING (
+VALUES (@p0, @p1, 0),
+(@p2, @p3, 1)) AS i ([Name], [Status], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Name], [Status])
+VALUES (i.[Name], i.[Status])
+OUTPUT INSERTED.[Id], i._Position;
+2023-10-10 18:23:31.759 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-10 18:23:31.760 -06:00 [INF] Hosting environment: Development
+2023-10-10 18:23:31.760 -06:00 [INF] Content root path: C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web
+2023-10-10 18:23:31.831 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger - -
+2023-10-10 18:23:32.049 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/index.html - -
+2023-10-10 18:23:32.058 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger - - - 302 - - 231.4536ms
+2023-10-10 18:23:32.514 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/index.html - - - 200 - text/html;+charset=utf-8 465.1710ms
+2023-10-10 18:23:32.538 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - -
+2023-10-10 18:23:32.542 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - - - 200 12376 application/javascript;+charset=utf-8 3.7380ms
+2023-10-10 18:23:32.619 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_vs/browserLink - -
+2023-10-10 18:23:32.645 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 26.3615ms
+2023-10-10 18:23:32.974 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - -
+2023-10-10 18:23:33.014 -06:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-10-10 18:23:34.003 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - - - 200 - application/json;+charset=utf-8 1029.1303ms
+2023-10-10 18:23:41.919 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Persons application/json 103
+2023-10-10 18:23:41.926 -06:00 [INF] Executing endpoint 'HTTP: POST /Persons'
+2023-10-10 18:23:42.038 -06:00 [INF] Handling CreatePersonCommand
+2023-10-10 18:23:42.039 -06:00 [INF] Property firstName : Diego
+2023-10-10 18:23:42.039 -06:00 [INF] Property lastName : Ceron
+2023-10-10 18:23:42.040 -06:00 [INF] Property age : 27
+2023-10-10 18:23:42.040 -06:00 [INF] Property email : diegoceron.dev@outlook.com
+2023-10-10 18:23:42.044 -06:00 [INF] Property status : {"Name":"Active","Value":1,"$type":"PersonStatus"}
+2023-10-10 18:23:42.174 -06:00 [ERR] Failed executing DbCommand (13ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 80), @p2='?' (Size = 50), @p3='?' (Size = 50), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Person] ([Age], [Email], [FirstName], [LastName], [Status])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2023-10-10 18:23:42.199 -06:00 [ERR] An exception occurred in the database while saving changes for context type 'MembershipsNetCore.Infrastructure.Data.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Person'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:6f0b66ba-06fd-4310-995b-fe94f37aa330
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Person'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:6f0b66ba-06fd-4310-995b-fe94f37aa330
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2023-10-10 18:23:42.459 -06:00 [INF] Executed endpoint 'HTTP: POST /Persons'
+2023-10-10 18:23:42.461 -06:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Person'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:6f0b66ba-06fd-4310-995b-fe94f37aa330
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at MembershipsNetCore.Infrastructure.Data.AppDbContext.SaveChangesAsync(CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Infrastructure\Data\AppDbContext.cs:line 29
+   at Ardalis.Specification.EntityFrameworkCore.RepositoryBase`1.SaveChangesAsync(CancellationToken cancellationToken)
+   at Ardalis.Specification.EntityFrameworkCore.RepositoryBase`1.AddAsync(T entity, CancellationToken cancellationToken)
+   at MembershipsNetCore.UseCases.Persons.Create.CreatePersonHandler.Handle(CreatePersonCommand request, CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.UseCases\Persons\Create\CreatePersonHandler.cs:line 20
+   at Ardalis.SharedKernel.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MembershipsNetCore.Web.Endpoints.PersonEndpoints.Create.HandleAsync(CreatePersonRequest request, CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web\Persons\Create.cs:line 34
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-10-10 18:23:42.499 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Persons application/json 103 - 500 - text/plain;+charset=utf-8 580.0589ms
+2023-10-10 18:26:13.739 -06:00 [INF] Registered 6 endpoints in 682 milliseconds.
+2023-10-10 18:26:14.667 -06:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-10 18:26:14.700 -06:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-10-10 18:26:14.886 -06:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-10 18:26:15.028 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-10 18:26:15.029 -06:00 [INF] Hosting environment: Development
+2023-10-10 18:26:15.029 -06:00 [INF] Content root path: C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web
+2023-10-10 18:26:15.049 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger - -
+2023-10-10 18:26:15.137 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/index.html - -
+2023-10-10 18:26:15.150 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger - - - 302 - - 96.7361ms
+2023-10-10 18:26:15.324 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/index.html - - - 200 - text/html;+charset=utf-8 186.5683ms
+2023-10-10 18:26:15.346 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - -
+2023-10-10 18:26:15.354 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - - - 200 12376 application/javascript;+charset=utf-8 4.4377ms
+2023-10-10 18:26:15.447 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_vs/browserLink - -
+2023-10-10 18:26:15.472 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 24.7883ms
+2023-10-10 18:26:15.882 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - -
+2023-10-10 18:26:15.895 -06:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-10-10 18:26:16.466 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - - - 200 - application/json;+charset=utf-8 584.0273ms
+2023-10-10 18:26:35.749 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Persons application/json 103
+2023-10-10 18:26:35.754 -06:00 [INF] Executing endpoint 'HTTP: POST /Persons'
+2023-10-10 18:26:35.829 -06:00 [INF] Handling CreatePersonCommand
+2023-10-10 18:26:35.830 -06:00 [INF] Property firstName : Diego
+2023-10-10 18:26:35.830 -06:00 [INF] Property lastName : Ceron
+2023-10-10 18:26:35.830 -06:00 [INF] Property age : 27
+2023-10-10 18:26:35.830 -06:00 [INF] Property email : diegoceron.dev@outlook.com
+2023-10-10 18:26:35.834 -06:00 [INF] Property status : {"Name":"Active","Value":1,"$type":"PersonStatus"}
+2023-10-10 18:26:36.205 -06:00 [ERR] Failed executing DbCommand (51ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 80), @p2='?' (Size = 50), @p3='?' (Size = 50), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Person] ([Age], [Email], [FirstName], [LastName], [Status])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2023-10-10 18:26:36.233 -06:00 [ERR] An exception occurred in the database while saving changes for context type 'MembershipsNetCore.Infrastructure.Data.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Person'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:4fb0e534-1acd-40e8-97d5-a73dba14c9a1
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Person'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:4fb0e534-1acd-40e8-97d5-a73dba14c9a1
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2023-10-10 18:26:36.465 -06:00 [INF] Executed endpoint 'HTTP: POST /Persons'
+2023-10-10 18:26:36.467 -06:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Person'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:4fb0e534-1acd-40e8-97d5-a73dba14c9a1
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at MembershipsNetCore.Infrastructure.Data.AppDbContext.SaveChangesAsync(CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Infrastructure\Data\AppDbContext.cs:line 29
+   at Ardalis.Specification.EntityFrameworkCore.RepositoryBase`1.SaveChangesAsync(CancellationToken cancellationToken)
+   at Ardalis.Specification.EntityFrameworkCore.RepositoryBase`1.AddAsync(T entity, CancellationToken cancellationToken)
+   at MembershipsNetCore.UseCases.Persons.Create.CreatePersonHandler.Handle(CreatePersonCommand request, CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.UseCases\Persons\Create\CreatePersonHandler.cs:line 20
+   at Ardalis.SharedKernel.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MembershipsNetCore.Web.Endpoints.PersonEndpoints.Create.HandleAsync(CreatePersonRequest request, CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web\Persons\Create.cs:line 34
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-10-10 18:26:36.521 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Persons application/json 103 - 500 - text/plain;+charset=utf-8 772.7447ms
+2023-10-10 18:28:01.206 -06:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-10 18:28:01.246 -06:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-10 18:28:01.248 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-10 18:28:01.313 -06:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2023-10-10 18:28:01.314 -06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-10 18:28:01.315 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-10 18:28:01.321 -06:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-10-10 18:28:01.332 -06:00 [INF] Applying migration '20231010162714_InitialMigrationName'.
+2023-10-10 18:28:01.364 -06:00 [ERR] Failed executing DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Contributors] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Contributors] PRIMARY KEY ([Id])
+);
+2023-10-10 18:28:32.690 -06:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-10 18:28:32.731 -06:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-10 18:28:32.733 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-10 18:28:32.734 -06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-10 18:28:32.746 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-10-10 18:28:37.483 -06:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-10 18:28:37.523 -06:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-10 18:28:37.525 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-10 18:28:37.526 -06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-10 18:28:37.537 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-10-10 18:28:48.527 -06:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-10 18:28:48.569 -06:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-10 18:28:48.571 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-10 18:28:48.571 -06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-10 18:28:48.583 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-10-10 18:29:18.808 -06:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-10 18:29:18.849 -06:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-10 18:29:18.851 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-10 18:29:18.852 -06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-10 18:29:18.862 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-10-10 18:30:13.544 -06:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-10 18:30:13.585 -06:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-10 18:30:13.587 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-10 18:30:13.587 -06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-10 18:30:13.599 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-10-10 18:30:13.610 -06:00 [INF] Applying migration '20231010162714_InitialMigrationName'.
+2023-10-10 18:30:13.642 -06:00 [ERR] Failed executing DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Contributors] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Contributors] PRIMARY KEY ([Id])
+);
+2023-10-10 18:31:18.041 -06:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-10 18:31:18.081 -06:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-10 18:31:18.084 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-10 18:31:18.084 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-10 18:31:18.097 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-10-10 18:31:18.108 -06:00 [INF] Applying migration '20231010162714_InitialMigrationName'.
+2023-10-10 18:31:18.137 -06:00 [ERR] Failed executing DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Contributors] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Contributors] PRIMARY KEY ([Id])
+);
+2023-10-10 18:33:38.661 -06:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-10 18:33:38.706 -06:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-10 18:33:38.708 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-10 18:33:38.709 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-10 18:33:38.721 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-10-10 18:33:38.733 -06:00 [INF] Applying migration '20231011003245_InitialMigrationName'.
+2023-10-10 18:33:38.757 -06:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20231011003245_InitialMigrationName', N'7.0.12');
+2023-10-10 18:36:31.954 -06:00 [INF] Registered 6 endpoints in 660 milliseconds.
+2023-10-10 18:36:32.865 -06:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-10 18:36:32.904 -06:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-10-10 18:36:32.987 -06:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Contributors] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Contributors] PRIMARY KEY ([Id])
+);
+2023-10-10 18:36:32.989 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Person] (
+    [Id] int NOT NULL IDENTITY,
+    [FirstName] nvarchar(50) NOT NULL,
+    [LastName] nvarchar(50) NOT NULL,
+    [Age] int NOT NULL,
+    [Email] nvarchar(80) NOT NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Person] PRIMARY KEY ([Id])
+);
+2023-10-10 18:36:33.191 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-10 18:36:33.226 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name], [c].[Status]
+FROM [Contributors] AS [c]
+2023-10-10 18:36:33.394 -06:00 [INF] Executed DbCommand (30ms) [Parameters=[@p0='?' (Size = 100), @p1='?' (DbType = Int32), @p2='?' (Size = 100), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [Contributors] USING (
+VALUES (@p0, @p1, 0),
+(@p2, @p3, 1)) AS i ([Name], [Status], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Name], [Status])
+VALUES (i.[Name], i.[Status])
+OUTPUT INSERTED.[Id], i._Position;
+2023-10-10 18:36:33.484 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-10 18:36:33.484 -06:00 [INF] Hosting environment: Development
+2023-10-10 18:36:33.484 -06:00 [INF] Content root path: C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web
+2023-10-10 18:36:33.504 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger - -
+2023-10-10 18:36:33.594 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/index.html - -
+2023-10-10 18:36:33.607 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger - - - 302 - - 100.4273ms
+2023-10-10 18:36:33.783 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/index.html - - - 200 - text/html;+charset=utf-8 188.6445ms
+2023-10-10 18:36:33.800 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - -
+2023-10-10 18:36:33.805 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - - - 200 12376 application/javascript;+charset=utf-8 5.0287ms
+2023-10-10 18:36:33.924 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_vs/browserLink - -
+2023-10-10 18:36:33.940 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 16.3184ms
+2023-10-10 18:36:34.389 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - -
+2023-10-10 18:36:34.401 -06:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-10-10 18:36:35.107 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - - - 200 - application/json;+charset=utf-8 717.9029ms
+2023-10-10 18:37:04.523 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Persons application/json 103
+2023-10-10 18:37:04.528 -06:00 [INF] Executing endpoint 'HTTP: POST /Persons'
+2023-10-10 18:37:04.605 -06:00 [INF] Handling CreatePersonCommand
+2023-10-10 18:37:04.606 -06:00 [INF] Property firstName : Diego
+2023-10-10 18:37:04.607 -06:00 [INF] Property lastName : Ceron
+2023-10-10 18:37:04.607 -06:00 [INF] Property age : 27
+2023-10-10 18:37:04.607 -06:00 [INF] Property email : diegoceron.dev@outlook.com
+2023-10-10 18:37:04.613 -06:00 [INF] Property status : {"Name":"Active","Value":1,"$type":"PersonStatus"}
+2023-10-10 18:37:04.730 -06:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 80), @p2='?' (Size = 50), @p3='?' (Size = 50), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Person] ([Age], [Email], [FirstName], [LastName], [Status])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2023-10-10 18:37:04.751 -06:00 [INF] Handled CreatePersonCommand with Ardalis.Result.Result`1[System.Int32] in 135 ms
+2023-10-10 18:37:04.765 -06:00 [INF] Executed endpoint 'HTTP: POST /Persons'
+2023-10-10 18:37:04.774 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Persons application/json 103 - 200 - application/json 251.3254ms
