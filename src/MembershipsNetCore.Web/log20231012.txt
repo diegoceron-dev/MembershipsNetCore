@@ -1,0 +1,334 @@
+2023-10-12 15:14:40.588 -06:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-12 15:14:40.631 -06:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-12 15:14:40.633 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-12 15:14:40.694 -06:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2023-10-12 15:14:40.695 -06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-12 15:14:40.696 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-12 15:14:40.703 -06:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-10-12 15:14:40.715 -06:00 [INF] Applying migration '20231011003619_InitialMigrationName'.
+2023-10-12 15:14:40.745 -06:00 [ERR] Failed executing DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Contributors] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Contributors] PRIMARY KEY ([Id])
+);
+2023-10-12 15:15:24.715 -06:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-12 15:15:24.758 -06:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-12 15:15:24.760 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-12 15:15:24.760 -06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-12 15:15:24.773 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-10-12 15:15:24.790 -06:00 [INF] Applying migration '20231011003619_InitialMigrationName'.
+2023-10-12 15:15:24.820 -06:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Contributors] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Contributors] PRIMARY KEY ([Id])
+);
+2023-10-12 15:16:51.034 -06:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-12 15:16:51.076 -06:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-12 15:16:51.078 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-12 15:16:51.079 -06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-12 15:16:51.091 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-10-12 15:16:51.102 -06:00 [INF] Applying migration '20231011003619_InitialMigrationName'.
+2023-10-12 15:16:51.133 -06:00 [ERR] Failed executing DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Contributors] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Contributors] PRIMARY KEY ([Id])
+);
+2023-10-12 15:19:07.295 -06:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-12 15:19:07.335 -06:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-12 15:19:07.337 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-12 15:19:07.338 -06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-12 15:19:07.349 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-10-12 15:19:07.359 -06:00 [INF] Applying migration '20231011003619_InitialMigrationName'.
+2023-10-12 15:19:07.390 -06:00 [ERR] Failed executing DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Contributors] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Contributors] PRIMARY KEY ([Id])
+);
+2023-10-12 15:23:50.015 -06:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-12 15:23:50.057 -06:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-12 15:23:50.059 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-12 15:23:50.060 -06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-12 15:23:50.073 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-10-12 15:23:50.088 -06:00 [INF] Applying migration '20231011003619_InitialMigrationName'.
+2023-10-12 15:23:50.120 -06:00 [ERR] Failed executing DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Contributors] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Contributors] PRIMARY KEY ([Id])
+);
+2023-10-12 15:25:14.519 -06:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-12 15:25:14.562 -06:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-12 15:25:14.564 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-12 15:25:14.565 -06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-12 15:25:14.576 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-10-12 15:25:14.590 -06:00 [INF] Applying migration '20231011003619_InitialMigrationName'.
+2023-10-12 15:25:14.619 -06:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Contributors] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Contributors] PRIMARY KEY ([Id])
+);
+2023-10-12 15:25:53.457 -06:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-12 15:25:53.499 -06:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-12 15:25:53.501 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-12 15:25:53.501 -06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-12 15:25:53.514 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-10-12 15:26:00.850 -06:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-12 15:26:00.890 -06:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-12 15:26:00.891 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-12 15:26:00.892 -06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-12 15:26:00.903 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-10-12 15:26:00.919 -06:00 [INF] Applying migration '20231011003619_InitialMigrationName'.
+2023-10-12 15:26:00.955 -06:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Contributors] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Contributors] PRIMARY KEY ([Id])
+);
+2023-10-12 15:27:09.085 -06:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-12 15:27:09.126 -06:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-12 15:27:09.128 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-12 15:27:09.129 -06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-12 15:27:09.142 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-10-12 15:27:09.154 -06:00 [INF] Applying migration '20231011003619_InitialMigrationName'.
+2023-10-12 15:27:09.187 -06:00 [ERR] Failed executing DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Contributors] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Contributors] PRIMARY KEY ([Id])
+);
+2023-10-12 15:52:53.145 -06:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-12 15:52:53.187 -06:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-12 15:52:53.189 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-12 15:52:53.189 -06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-12 15:52:53.201 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-10-12 15:52:53.213 -06:00 [INF] Applying migration '20231012215239_InitialCreate'.
+2023-10-12 15:52:53.257 -06:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Contributors] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Contributors] PRIMARY KEY ([Id])
+);
+2023-10-12 15:52:53.259 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Person] (
+    [Id] int NOT NULL IDENTITY,
+    [FirstName] nvarchar(50) NOT NULL,
+    [LastName] nvarchar(50) NOT NULL,
+    [Age] int NOT NULL,
+    [Email] nvarchar(80) NOT NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Person] PRIMARY KEY ([Id])
+);
+2023-10-12 15:52:53.263 -06:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Student] (
+    [Id] int NOT NULL IDENTITY,
+    [PersonId] int NOT NULL,
+    CONSTRAINT [PK_Student] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Student_Person_PersonId] FOREIGN KEY ([PersonId]) REFERENCES [Person] ([Id]) ON DELETE CASCADE
+);
+2023-10-12 15:52:53.264 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Teacher] (
+    [Id] int NOT NULL IDENTITY,
+    [PersonId] int NOT NULL,
+    CONSTRAINT [PK_Teacher] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Teacher_Person_PersonId] FOREIGN KEY ([PersonId]) REFERENCES [Person] ([Id]) ON DELETE CASCADE
+);
+2023-10-12 15:52:53.267 -06:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Student_PersonId] ON [Student] ([PersonId]);
+2023-10-12 15:52:53.268 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Teacher_PersonId] ON [Teacher] ([PersonId]);
+2023-10-12 15:52:53.270 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20231012215239_InitialCreate', N'7.0.12');
+2023-10-12 15:56:13.516 -06:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-12 15:56:13.559 -06:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-12 15:56:13.561 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-12 15:56:13.562 -06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-12 15:56:13.575 -06:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-10-12 15:56:13.585 -06:00 [INF] Applying migration '20231012215602_AddFKPersonTeacher'.
+2023-10-12 15:56:13.622 -06:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP INDEX [IX_Teacher_PersonId] ON [Teacher];
+2023-10-12 15:56:13.623 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Teacher_PersonId] ON [Teacher] ([PersonId]);
+2023-10-12 15:56:13.624 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20231012215602_AddFKPersonTeacher', N'7.0.12');
+2023-10-12 17:07:18.807 -06:00 [INF] Registered 7 endpoints in 3653 milliseconds.
+2023-10-12 17:07:21.055 -06:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-12 17:07:21.115 -06:00 [INF] Executed DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-10-12 17:07:21.348 -06:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-12 17:07:21.385 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name], [c].[Status]
+FROM [Contributors] AS [c]
+2023-10-12 17:07:21.608 -06:00 [INF] Executed DbCommand (41ms) [Parameters=[@p0='?' (Size = 100), @p1='?' (DbType = Int32), @p2='?' (Size = 100), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [Contributors] USING (
+VALUES (@p0, @p1, 0),
+(@p2, @p3, 1)) AS i ([Name], [Status], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Name], [Status])
+VALUES (i.[Name], i.[Status])
+OUTPUT INSERTED.[Id], i._Position;
+2023-10-12 17:07:21.764 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-12 17:07:21.764 -06:00 [INF] Hosting environment: Development
+2023-10-12 17:07:21.764 -06:00 [INF] Content root path: C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web
+2023-10-12 17:07:21.820 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger - -
+2023-10-12 17:07:22.022 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/index.html - -
+2023-10-12 17:07:22.031 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger - - - 302 - - 214.5380ms
+2023-10-12 17:07:22.418 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/index.html - - - 200 - text/html;+charset=utf-8 395.7975ms
+2023-10-12 17:07:22.441 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - -
+2023-10-12 17:07:22.446 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - - - 200 12376 application/javascript;+charset=utf-8 4.2896ms
+2023-10-12 17:07:22.528 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_vs/browserLink - -
+2023-10-12 17:07:22.664 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 135.8292ms
+2023-10-12 17:07:22.841 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - -
+2023-10-12 17:07:22.889 -06:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-10-12 17:07:23.724 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - - - 200 - application/json;+charset=utf-8 882.6200ms
+2023-10-12 17:09:38.943 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Persons application/json 103
+2023-10-12 17:09:38.951 -06:00 [INF] Executing endpoint 'HTTP: POST /Persons'
+2023-10-12 17:09:39.037 -06:00 [INF] Handling CreatePersonCommand
+2023-10-12 17:09:39.038 -06:00 [INF] Property firstName : Diego
+2023-10-12 17:09:39.038 -06:00 [INF] Property lastName : Ceron
+2023-10-12 17:09:39.038 -06:00 [INF] Property age : 27
+2023-10-12 17:09:39.038 -06:00 [INF] Property email : diegoceron.dev@outlook.com
+2023-10-12 17:09:39.041 -06:00 [INF] Property status : {"Name":"Active","Value":1,"$type":"PersonStatus"}
+2023-10-12 17:09:39.142 -06:00 [INF] Executed DbCommand (18ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 80), @p2='?' (Size = 50), @p3='?' (Size = 50), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Person] ([Age], [Email], [FirstName], [LastName], [Status])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2023-10-12 17:09:39.150 -06:00 [INF] Handled CreatePersonCommand with Ardalis.Result.Result`1[System.Int32] in 107 ms
+2023-10-12 17:09:39.162 -06:00 [INF] Executed endpoint 'HTTP: POST /Persons'
+2023-10-12 17:09:39.165 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Persons application/json 103 - 200 - application/json 221.7752ms
+2023-10-12 17:09:51.152 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Students application/json 19
+2023-10-12 17:09:51.153 -06:00 [INF] Executing endpoint 'HTTP: POST /Students'
+2023-10-12 17:09:51.165 -06:00 [INF] Handling CreateStudentCommand
+2023-10-12 17:09:51.165 -06:00 [INF] Property idPerson : 1
+2023-10-12 17:09:51.179 -06:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Student] ([PersonId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2023-10-12 17:09:51.182 -06:00 [INF] Handled CreateStudentCommand with Ardalis.Result.Result`1[System.Int32] in 16 ms
+2023-10-12 17:09:51.183 -06:00 [INF] Executed endpoint 'HTTP: POST /Students'
+2023-10-12 17:09:51.184 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Students application/json 19 - 200 - application/json 31.6068ms

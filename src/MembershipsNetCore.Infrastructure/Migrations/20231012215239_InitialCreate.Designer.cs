@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MembershipsNetCore.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231011003619_InitialMigrationName")]
-    partial class InitialMigrationName
+    [Migration("20231012215239_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -77,6 +77,70 @@ namespace MembershipsNetCore.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Person");
+                });
+
+            modelBuilder.Entity("MembershipsNetCore.Core.StudentAggregate.Student", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("PersonId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PersonId")
+                        .IsUnique();
+
+                    b.ToTable("Student");
+                });
+
+            modelBuilder.Entity("MembershipsNetCore.Core.TeacherAggregate.Teacher", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("PersonId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PersonId");
+
+                    b.ToTable("Teacher");
+                });
+
+            modelBuilder.Entity("MembershipsNetCore.Core.StudentAggregate.Student", b =>
+                {
+                    b.HasOne("MembershipsNetCore.Core.PersonAggregate.Person", "Person")
+                        .WithOne("Student")
+                        .HasForeignKey("MembershipsNetCore.Core.StudentAggregate.Student", "PersonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Person");
+                });
+
+            modelBuilder.Entity("MembershipsNetCore.Core.TeacherAggregate.Teacher", b =>
+                {
+                    b.HasOne("MembershipsNetCore.Core.PersonAggregate.Person", "person")
+                        .WithMany()
+                        .HasForeignKey("PersonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("person");
+                });
+
+            modelBuilder.Entity("MembershipsNetCore.Core.PersonAggregate.Person", b =>
+                {
+                    b.Navigation("Student");
                 });
 #pragma warning restore 612, 618
         }

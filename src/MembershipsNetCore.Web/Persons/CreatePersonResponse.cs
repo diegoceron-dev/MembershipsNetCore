@@ -1,6 +1,4 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace MembershipsNetCore.Web.Endpoints.PersonEndpoints;
+﻿namespace MembershipsNetCore.Web.Endpoints.PersonEndpoints;
 
 public class CreatePersonResponse
 {

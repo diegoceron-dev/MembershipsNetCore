@@ -1,9 +1,9 @@
 ﻿using MembershipsNetCore.Core.PersonAggregate;
 using Ardalis.SharedKernel;
 using FastEndpoints;
-using MembershipsNetCore.Web.Endpoints.PersonEndpoints;
 using MembershipsNetCore.UseCases.Persons.Create;
 using MediatR;
+
 namespace MembershipsNetCore.Web.Endpoints.PersonEndpoints;
 
 public class Create: Endpoint<CreatePersonRequest, CreatePersonResponse>
