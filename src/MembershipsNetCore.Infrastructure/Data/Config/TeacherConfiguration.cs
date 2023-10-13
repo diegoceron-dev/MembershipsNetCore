@@ -1,7 +1,6 @@
-﻿using MembershipsNetCore.Core.TeacherAggregate;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using MembershipsNetCore.Core.TeacherAggregate;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
 
 namespace MembershipsNetCore.Infrastructure.Data.Config;
 public class TeacherConfiguration: IEntityTypeConfiguration<Teacher>

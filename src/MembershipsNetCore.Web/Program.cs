@@ -1,15 +1,14 @@
-﻿using Ardalis.ListStartupServices;
-using Autofac;
-using Autofac.Extensions.DependencyInjection;
-using MembershipsNetCore.Core;
-using MembershipsNetCore.Infrastructure;
+﻿using Autofac.Extensions.DependencyInjection;
 using MembershipsNetCore.Infrastructure.Data;
-using MembershipsNetCore.Web;
-using FastEndpoints;
-using FastEndpoints.Swagger;
-using FastEndpoints.ApiExplorer;
-using Serilog;
+using MembershipsNetCore.Infrastructure;
 using Microsoft.EntityFrameworkCore;
+using Ardalis.ListStartupServices;
+using MembershipsNetCore.Core;
+using FastEndpoints.Swagger;
+using FastEndpoints;
+using Serilog;
+using Autofac;
+using MembershipsNetCore.Web;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -79,7 +78,6 @@ app.UseHttpsRedirection();
 // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint.
 //app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1"));
 
-// Seed Database
 using (var scope = app.Services.CreateScope())
 {
   var services = scope.ServiceProvider;

@@ -1,18 +1,18 @@
-﻿using MediatR;
-using FastEndpoints;
+﻿using MembershipsNetCore.Core.TeacherAggregate;
 using Ardalis.SharedKernel;
-using MembershipsNetCore.Core.StudentAggregate;
-using MembershipsNetCore.UseCases.Students.Create;
-using MembershipsNetCore.Web.Endpoints.StudentEndpoints.DTOs;
+using FastEndpoints;
+using MembershipsNetCore.UseCases.Teachers.Create;
+using MediatR;
+using MembershipsNetCore.Web.Endpoints.TeacherEndpoints.DTOs;
 
-namespace MembershipsNetCore.Web.Endpoints.StudentEndpoints;
+namespace MembershipsNetCore.Web.Endpoints.TeacherEndpoints;
 
 public class Create : Endpoint<Request, Response>
 {
-  private readonly IRepository<Student> _repository;
+  private readonly IRepository<Teacher> _repository;
   private readonly IMediator _mediator;
 
-  public Create(IRepository<Student> repository, IMediator mediator)
+  public Create(IRepository<Teacher> repository, IMediator mediator)
   {
     _repository = repository;
     _mediator = mediator;
@@ -32,7 +32,7 @@ public class Create : Endpoint<Request, Response>
     Request request,
     CancellationToken cancellationToken)
   {
-    var result = await _mediator.Send(new CreateStudentCommand((int)request.IdPerson!));
+    var result = await _mediator.Send(new CreateTeacherCommand((int)request.IdPerson!));
 
     if (result.IsSuccess)
     {
@@ -41,4 +41,5 @@ public class Create : Endpoint<Request, Response>
     }
     // TODO: Handle other cases as necessary
   }
+
 }

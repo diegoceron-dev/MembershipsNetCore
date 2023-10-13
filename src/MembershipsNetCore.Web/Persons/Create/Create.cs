@@ -3,10 +3,11 @@ using Ardalis.SharedKernel;
 using FastEndpoints;
 using MembershipsNetCore.UseCases.Persons.Create;
 using MediatR;
+using MembershipsNetCore.Web.Persons.Create.DTOs;
 
-namespace MembershipsNetCore.Web.Endpoints.PersonEndpoints;
+namespace MembershipsNetCore.Web.Persons.Create;
 
-public class Create: Endpoint<CreatePersonRequest, CreatePersonResponse>
+public class Create : Endpoint<Request, Response>
 {
   private readonly IRepository<Person> _repository;
   private readonly IMediator _mediator;
@@ -19,23 +20,23 @@ public class Create: Endpoint<CreatePersonRequest, CreatePersonResponse>
 
   public override void Configure()
   {
-    Post(CreatePersonRequest.Route);
+    Post(Request.Route);
     AllowAnonymous();
     Summary(s =>
     {
-      s.ExampleRequest = new CreatePersonRequest { Age = 27, Email = "diegoceron.dev@outlook.com", FirstName = "Diego", LastName = "Ceron" }; 
+      s.ExampleRequest = new Request { Age = 27, Email = "diegoceron.dev@outlook.com", FirstName = "Diego", LastName = "Ceron" };
     });
   }
 
   public override async Task HandleAsync(
-    CreatePersonRequest request,
+    Request request,
     CancellationToken cancellationToken)
   {
     var result = await _mediator.Send(new CreatePersonCommand(request.FirstName!, request.LastName!, (int)request.Age!, request.Email!, PersonStatus.Active));
 
     if (result.IsSuccess)
     {
-      Response = new CreatePersonResponse(result.Value, request.FirstName!, request.LastName!);
+      Response = new Response(result.Value, request.FirstName!, request.LastName!);
       return;
     }
     // TODO: Handle other cases as necessary

@@ -6,6 +6,7 @@ namespace MembershipsNetCore.UseCases.Students.Create;
 public class CreateStudentHandler : ICommandHandler<CreateStudentCommand, Result<int>>
 {
   private readonly IRepository<Student> _repository;
+
   public CreateStudentHandler(IRepository<Student> repository)
   {
     _repository = repository;

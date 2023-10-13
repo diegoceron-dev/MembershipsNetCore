@@ -1,0 +1,509 @@
+2023-10-13 12:19:45.752 -06:00 [INF] Registered 8 endpoints in 3691 milliseconds.
+2023-10-13 12:19:48.019 -06:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-13 12:19:48.074 -06:00 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-10-13 12:19:48.310 -06:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-13 12:19:48.442 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-13 12:19:48.443 -06:00 [INF] Hosting environment: Development
+2023-10-13 12:19:48.443 -06:00 [INF] Content root path: C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web
+2023-10-13 12:19:48.501 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger - -
+2023-10-13 12:19:48.714 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/index.html - -
+2023-10-13 12:19:48.723 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger - - - 302 - - 223.7231ms
+2023-10-13 12:19:49.073 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/index.html - - - 200 - text/html;+charset=utf-8 359.0191ms
+2023-10-13 12:19:49.089 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - -
+2023-10-13 12:19:49.092 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - - - 200 12376 application/javascript;+charset=utf-8 2.9502ms
+2023-10-13 12:19:49.198 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_vs/browserLink - -
+2023-10-13 12:19:49.214 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 16.2410ms
+2023-10-13 12:19:49.538 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - -
+2023-10-13 12:19:49.601 -06:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-10-13 12:19:50.479 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - - - 200 - application/json;+charset=utf-8 940.5206ms
+2023-10-13 12:22:23.890 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Teachers application/json 19
+2023-10-13 12:22:23.912 -06:00 [INF] Executing endpoint 'HTTP: POST /Teachers'
+2023-10-13 12:22:24.102 -06:00 [INF] Executed endpoint 'HTTP: POST /Teachers'
+2023-10-13 12:22:24.104 -06:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Nullable object must have a value.
+   at System.Nullable`1.get_Value()
+   at MembershipsNetCore.Web.Endpoints.TeacherEndpoints.Create.HandleAsync(Request request, CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web\Teachers\Create\Create.cs:line 35
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-10-13 12:22:24.140 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Teachers application/json 19 - 500 - text/plain;+charset=utf-8 272.5458ms
+2023-10-13 12:28:28.530 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Teachers application/json 19
+2023-10-13 12:28:28.531 -06:00 [INF] Executing endpoint 'HTTP: POST /Teachers'
+2023-10-13 12:28:53.760 -06:00 [INF] Executed endpoint 'HTTP: POST /Teachers'
+2023-10-13 12:28:53.765 -06:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Nullable object must have a value.
+   at System.Nullable`1.get_Value()
+   at MembershipsNetCore.Web.Endpoints.TeacherEndpoints.Create.HandleAsync(Request request, CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web\Teachers\Create\Create.cs:line 35
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-10-13 12:28:53.767 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Teachers application/json 19 - 500 - text/plain;+charset=utf-8 25236.7868ms
+2023-10-13 12:28:57.944 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Teachers application/json 19
+2023-10-13 12:28:57.944 -06:00 [INF] Executing endpoint 'HTTP: POST /Teachers'
+2023-10-13 12:28:59.665 -06:00 [INF] Executed endpoint 'HTTP: POST /Teachers'
+2023-10-13 12:28:59.670 -06:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Nullable object must have a value.
+   at System.Nullable`1.get_Value()
+   at MembershipsNetCore.Web.Endpoints.TeacherEndpoints.Create.HandleAsync(Request request, CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web\Teachers\Create\Create.cs:line 35
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-10-13 12:28:59.672 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Teachers application/json 19 - 500 - text/plain;+charset=utf-8 1728.4898ms
+2023-10-13 12:29:01.868 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Teachers application/json 19
+2023-10-13 12:29:01.869 -06:00 [INF] Executing endpoint 'HTTP: POST /Teachers'
+2023-10-13 12:44:03.645 -06:00 [INF] Registered 8 endpoints in 647 milliseconds.
+2023-10-13 12:44:04.567 -06:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-13 12:44:04.630 -06:00 [INF] Executed DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-10-13 12:44:04.817 -06:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-13 12:44:04.918 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-13 12:44:04.919 -06:00 [INF] Hosting environment: Development
+2023-10-13 12:44:04.919 -06:00 [INF] Content root path: C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web
+2023-10-13 12:44:04.938 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger - -
+2023-10-13 12:44:05.025 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/index.html - -
+2023-10-13 12:44:05.028 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger - - - 302 - - 91.2117ms
+2023-10-13 12:44:05.234 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - -
+2023-10-13 12:44:05.234 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/index.html - - - 200 - text/html;+charset=utf-8 208.7635ms
+2023-10-13 12:44:05.237 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - - - 200 12376 application/javascript;+charset=utf-8 2.9170ms
+2023-10-13 12:44:05.312 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_vs/browserLink - -
+2023-10-13 12:44:05.328 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 15.1140ms
+2023-10-13 12:44:05.631 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - -
+2023-10-13 12:44:05.643 -06:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-10-13 12:44:06.278 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - - - 200 - application/json;+charset=utf-8 646.8534ms
+2023-10-13 12:47:21.566 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Teachers application/json 19
+2023-10-13 12:47:21.591 -06:00 [INF] Executing endpoint 'HTTP: POST /Teachers'
+2023-10-13 12:47:22.091 -06:00 [INF] Executed endpoint 'HTTP: POST /Teachers'
+2023-10-13 12:47:22.107 -06:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Nullable object must have a value.
+   at System.Nullable`1.get_Value()
+   at MembershipsNetCore.Web.Endpoints.TeacherEndpoints.Create.HandleAsync(Request request, CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web\Teachers\Create\Create.cs:line 35
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-10-13 12:47:22.229 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Teachers application/json 19 - 500 - text/plain;+charset=utf-8 664.1750ms
+2023-10-13 12:48:01.821 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Teachers application/json 19
+2023-10-13 12:48:01.830 -06:00 [INF] Executing endpoint 'HTTP: POST /Teachers'
+2023-10-13 12:48:23.875 -06:00 [INF] Executed endpoint 'HTTP: POST /Teachers'
+2023-10-13 12:48:23.879 -06:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Nullable object must have a value.
+   at System.Nullable`1.get_Value()
+   at MembershipsNetCore.Web.Endpoints.TeacherEndpoints.Create.HandleAsync(Request request, CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web\Teachers\Create\Create.cs:line 35
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-10-13 12:48:23.887 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Teachers application/json 19 - 500 - text/plain;+charset=utf-8 22065.7719ms
+2023-10-13 12:48:29.734 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Teachers application/json 19
+2023-10-13 12:48:29.735 -06:00 [INF] Executing endpoint 'HTTP: POST /Teachers'
+2023-10-13 12:48:35.241 -06:00 [INF] Executed endpoint 'HTTP: POST /Teachers'
+2023-10-13 12:48:35.251 -06:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Nullable object must have a value.
+   at System.Nullable`1.get_Value()
+   at MembershipsNetCore.Web.Endpoints.TeacherEndpoints.Create.HandleAsync(Request request, CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web\Teachers\Create\Create.cs:line 35
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-10-13 12:48:35.254 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Teachers application/json 19 - 500 - text/plain;+charset=utf-8 5519.7038ms
+2023-10-13 12:53:24.935 -06:00 [INF] Registered 8 endpoints in 2053 milliseconds.
+2023-10-13 12:53:28.591 -06:00 [INF] Executed DbCommand (56ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-13 12:53:28.753 -06:00 [INF] Executed DbCommand (108ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-10-13 12:53:29.608 -06:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-13 12:53:29.835 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-13 12:53:29.836 -06:00 [INF] Hosting environment: Development
+2023-10-13 12:53:29.837 -06:00 [INF] Content root path: C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web
+2023-10-13 12:53:29.894 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger - -
+2023-10-13 12:53:30.187 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/index.html - -
+2023-10-13 12:53:30.204 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger - - - 302 - - 313.5018ms
+2023-10-13 12:53:30.789 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/index.html - - - 200 - text/html;+charset=utf-8 601.3599ms
+2023-10-13 12:53:30.846 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - -
+2023-10-13 12:53:30.856 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - - - 200 12376 application/javascript;+charset=utf-8 9.4905ms
+2023-10-13 12:53:31.241 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_vs/browserLink - -
+2023-10-13 12:53:31.302 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 60.6716ms
+2023-10-13 12:53:31.644 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - -
+2023-10-13 12:53:31.675 -06:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-10-13 12:53:33.344 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - - - 200 - application/json;+charset=utf-8 1699.4906ms
+2023-10-13 12:53:42.279 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Teachers application/json 19
+2023-10-13 12:53:42.319 -06:00 [INF] Executing endpoint 'HTTP: POST /Teachers'
+2023-10-13 12:53:54.721 -06:00 [INF] Executed endpoint 'HTTP: POST /Teachers'
+2023-10-13 12:53:54.723 -06:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Nullable object must have a value.
+   at System.Nullable`1.get_Value()
+   at MembershipsNetCore.Web.Endpoints.TeacherEndpoints.Create.HandleAsync(Request request, CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web\Teachers\Create\Create.cs:line 35
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-10-13 12:53:54.755 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Teachers application/json 19 - 500 - text/plain;+charset=utf-8 12475.8506ms
+2023-10-13 12:54:10.109 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Students application/json 19
+2023-10-13 12:54:10.110 -06:00 [INF] Executing endpoint 'HTTP: POST /Students'
+2023-10-13 12:54:25.126 -06:00 [INF] Handling CreateStudentCommand
+2023-10-13 12:54:25.126 -06:00 [INF] Property idPerson : 1
+2023-10-13 12:54:25.757 -06:00 [INF] Executed DbCommand (127ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Student] ([PersonId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2023-10-13 12:54:25.845 -06:00 [ERR] An exception occurred in the database while saving changes for context type 'MembershipsNetCore.Infrastructure.Data.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.Student' with unique index 'IX_Student_PersonId'. The duplicate key value is (1).
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:167696a3-0871-4ac3-a8f0-11f6f234ca00
+Error Number:2601,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.Student' with unique index 'IX_Student_PersonId'. The duplicate key value is (1).
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:167696a3-0871-4ac3-a8f0-11f6f234ca00
+Error Number:2601,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2023-10-13 12:54:26.449 -06:00 [INF] Executed endpoint 'HTTP: POST /Students'
+2023-10-13 12:54:26.450 -06:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.Student' with unique index 'IX_Student_PersonId'. The duplicate key value is (1).
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:167696a3-0871-4ac3-a8f0-11f6f234ca00
+Error Number:2601,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at MembershipsNetCore.Infrastructure.Data.AppDbContext.SaveChangesAsync(CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Infrastructure\Data\AppDbContext.cs:line 29
+   at Ardalis.Specification.EntityFrameworkCore.RepositoryBase`1.SaveChangesAsync(CancellationToken cancellationToken)
+   at Ardalis.Specification.EntityFrameworkCore.RepositoryBase`1.AddAsync(T entity, CancellationToken cancellationToken)
+   at MembershipsNetCore.UseCases.Students.Create.CreateStudentHandler.Handle(CreateStudentCommand request, CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.UseCases\Students\Create\CreateStudentHandler.cs:line 19
+   at Ardalis.SharedKernel.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MembershipsNetCore.Web.Endpoints.StudentEndpoints.Create.HandleAsync(Request request, CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web\Students\Create\Create.cs:line 35
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-10-13 12:54:26.489 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Students application/json 19 - 500 - text/plain;+charset=utf-8 16379.6424ms
+2023-10-13 12:55:48.521 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Students application/json 19
+2023-10-13 12:55:48.522 -06:00 [INF] Executing endpoint 'HTTP: POST /Students'
+2023-10-13 12:55:48.525 -06:00 [INF] Handling CreateStudentCommand
+2023-10-13 12:55:48.527 -06:00 [INF] Property idPerson : 1
+2023-10-13 12:55:48.597 -06:00 [INF] Executed DbCommand (39ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Student] ([PersonId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2023-10-13 12:55:48.621 -06:00 [ERR] An exception occurred in the database while saving changes for context type 'MembershipsNetCore.Infrastructure.Data.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.Student' with unique index 'IX_Student_PersonId'. The duplicate key value is (1).
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:167696a3-0871-4ac3-a8f0-11f6f234ca00
+Error Number:2601,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.Student' with unique index 'IX_Student_PersonId'. The duplicate key value is (1).
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:167696a3-0871-4ac3-a8f0-11f6f234ca00
+Error Number:2601,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2023-10-13 12:55:49.292 -06:00 [INF] Executed endpoint 'HTTP: POST /Students'
+2023-10-13 12:55:49.295 -06:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.Student' with unique index 'IX_Student_PersonId'. The duplicate key value is (1).
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:167696a3-0871-4ac3-a8f0-11f6f234ca00
+Error Number:2601,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at MembershipsNetCore.Infrastructure.Data.AppDbContext.SaveChangesAsync(CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Infrastructure\Data\AppDbContext.cs:line 29
+   at Ardalis.Specification.EntityFrameworkCore.RepositoryBase`1.SaveChangesAsync(CancellationToken cancellationToken)
+   at Ardalis.Specification.EntityFrameworkCore.RepositoryBase`1.AddAsync(T entity, CancellationToken cancellationToken)
+   at MembershipsNetCore.UseCases.Students.Create.CreateStudentHandler.Handle(CreateStudentCommand request, CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.UseCases\Students\Create\CreateStudentHandler.cs:line 19
+   at Ardalis.SharedKernel.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MembershipsNetCore.Web.Endpoints.StudentEndpoints.Create.HandleAsync(Request request, CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web\Students\Create\Create.cs:line 35
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-10-13 12:55:49.310 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Students application/json 19 - 500 - text/plain;+charset=utf-8 789.0177ms
+2023-10-13 12:56:01.156 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Teachers application/json 19
+2023-10-13 12:56:01.156 -06:00 [INF] Executing endpoint 'HTTP: POST /Teachers'
+2023-10-13 12:56:25.108 -06:00 [INF] Registered 8 endpoints in 2114 milliseconds.
+2023-10-13 12:56:28.818 -06:00 [INF] Executed DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-13 12:56:28.947 -06:00 [INF] Executed DbCommand (96ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-10-13 12:56:29.885 -06:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-13 12:56:30.226 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-13 12:56:30.228 -06:00 [INF] Hosting environment: Development
+2023-10-13 12:56:30.228 -06:00 [INF] Content root path: C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web
+2023-10-13 12:56:30.364 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Teachers application/json 19
+2023-10-13 12:56:30.364 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger - -
+2023-10-13 12:56:30.561 -06:00 [INF] Executing endpoint 'HTTP: POST /Teachers'
+2023-10-13 12:56:30.625 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/index.html - -
+2023-10-13 12:56:30.646 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger - - - 302 - - 301.6546ms
+2023-10-13 12:56:41.188 -06:00 [INF] Handling CreateTeacherCommand
+2023-10-13 12:56:41.189 -06:00 [INF] Property idPerson : 2
+2023-10-13 12:56:41.458 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/index.html - - - 200 - text/html;+charset=utf-8 10832.4872ms
+2023-10-13 12:56:41.498 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - -
+2023-10-13 12:56:41.504 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - - - 200 12376 application/javascript;+charset=utf-8 5.6949ms
+2023-10-13 12:56:41.765 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_vs/browserLink - -
+2023-10-13 12:56:41.767 -06:00 [INF] Executed DbCommand (83ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Teacher] ([PersonId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2023-10-13 12:56:41.797 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 31.9027ms
+2023-10-13 12:56:41.887 -06:00 [INF] Handled CreateTeacherCommand with Ardalis.Result.Result`1[System.Int32] in 697 ms
+2023-10-13 12:56:41.922 -06:00 [INF] Executed endpoint 'HTTP: POST /Teachers'
+2023-10-13 12:56:41.933 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Teachers application/json 19 - 200 - application/json 11592.1267ms
+2023-10-13 12:56:42.125 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - -
+2023-10-13 12:56:42.150 -06:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-10-13 12:56:43.997 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - - - 200 - application/json;+charset=utf-8 1871.3977ms

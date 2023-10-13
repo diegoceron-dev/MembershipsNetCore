@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MembershipsNetCore.Web.Endpoints.PersonEndpoints;
+namespace MembershipsNetCore.Web.Persons.Create.DTOs;
 
-public class CreatePersonRequest
+public class Request
 {
   public const string Route = "/Persons";
 
