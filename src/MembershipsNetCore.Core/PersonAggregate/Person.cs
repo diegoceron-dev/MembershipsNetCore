@@ -13,7 +13,6 @@ public class Person: EntityBase, IAggregateRoot
   public string Email { get; private set; }
   public PersonStatus Status { get; private set; } = PersonStatus.NoSet;
 
-
   // Foreign Keys
   public Student ?Student { get; private set; }
   public Teacher ?Teacher { get; private set; }

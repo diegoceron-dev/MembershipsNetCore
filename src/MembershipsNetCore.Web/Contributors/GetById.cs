@@ -6,12 +6,6 @@ using MembershipsNetCore.UseCases.Contributors.Get;
 
 namespace MembershipsNetCore.Web.ContributorEndpoints;
 
-/// <summary>
-/// Get a Contributor by integer ID.
-/// </summary>
-/// <remarks>
-/// Takes a positive integer ID and returns a matching Contributor record.
-/// </remarks>
 public class GetById : Endpoint<GetContributorByIdRequest, ContributorRecord>
 {
   private readonly IMediator _mediator;

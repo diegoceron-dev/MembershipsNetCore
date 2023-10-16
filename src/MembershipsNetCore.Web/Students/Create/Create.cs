@@ -4,6 +4,9 @@ using Ardalis.SharedKernel;
 using MembershipsNetCore.Core.StudentAggregate;
 using MembershipsNetCore.UseCases.Students.Create;
 using MembershipsNetCore.Web.Endpoints.StudentEndpoints.DTOs;
+using MembershipsNetCore.Core.PersonAggregate;
+using MembershipsNetCore.UseCases.Persons.Create;
+using MembershipsNetCore.UseCases.Teachers.Create;
 
 namespace MembershipsNetCore.Web.Endpoints.StudentEndpoints;
 
@@ -24,7 +27,7 @@ public class Create : Endpoint<Request, Response>
     AllowAnonymous();
     Summary(s =>
     {
-      s.ExampleRequest = new Request { IdPerson = 1 };
+      s.ExampleRequest = new Request { Age = 28, Email = "diegoceron.dev@outlook.com", FirstName = "DIEGO", LastName = "CERON" };
     });
   }
 
@@ -32,13 +35,27 @@ public class Create : Endpoint<Request, Response>
     Request request,
     CancellationToken cancellationToken)
   {
-    var result = await _mediator.Send(new CreateStudentCommand((int)request.IdPerson!));
-
-    if (result.IsSuccess)
+    try
     {
-      Response = new Response(result.Value, (int)request.IdPerson!);
+      var resultPerson = await _mediator.Send(new CreatePersonCommand(request.FirstName!, request.LastName!, (int)request.Age!, request.Email!, PersonStatus.Active));
+
+      if (resultPerson.IsSuccess)
+      {
+        var resultStudent = await _mediator.Send(new CreateStudentCommand((int)resultPerson.Value!));
+
+        if (resultStudent.IsSuccess)
+        {
+          Response = new Response(resultStudent.Value, (int)resultPerson.Value!);
+          return;
+        }
+      }
+
+      throw new Exception();
+    }
+    catch (Exception)
+    {
       return;
     }
-    // TODO: Handle other cases as necessary
   }
+
 }

@@ -9,12 +9,10 @@ namespace MembershipsNetCore.Web.Persons.Create;
 
 public class Create : Endpoint<Request, Response>
 {
-  private readonly IRepository<Person> _repository;
   private readonly IMediator _mediator;
 
-  public Create(IRepository<Person> repository, IMediator mediator)
+  public Create(IMediator mediator)
   {
-    _repository = repository;
     _mediator = mediator;
   }
 

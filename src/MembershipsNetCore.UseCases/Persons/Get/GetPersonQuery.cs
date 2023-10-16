@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Ardalis.Result;
+using Ardalis.SharedKernel;
 
 namespace MembershipsNetCore.UseCases.Persons.Get;
-internal class GetPersonQuery
-{
-}
+
+public record GetPersonQuery(int PersonId) : IQuery<Result<PersonDTO>>;

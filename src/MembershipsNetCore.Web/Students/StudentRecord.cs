@@ -1,5 +1,5 @@
-﻿namespace MembershipsNetCore.Web.Students;
+﻿using MembershipsNetCore.Web.Endpoints.PersonEndpoints;
 
-public class StudentRecord
-{
-}
+namespace MembershipsNetCore.Web.Endpoints.StudentEndpoints.DTOs;
+
+public record StudentRecord(int Id, PersonRecord person);

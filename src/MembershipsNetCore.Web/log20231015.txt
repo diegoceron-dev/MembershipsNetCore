@@ -1,0 +1,178 @@
+2023-10-15 12:53:11.287 -06:00 [INF] Registered 10 endpoints in 10261 milliseconds.
+2023-10-15 12:53:17.712 -06:00 [INF] Executed DbCommand (122ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-15 12:53:17.870 -06:00 [INF] Executed DbCommand (123ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-10-15 12:53:18.672 -06:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-15 12:53:18.991 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-15 12:53:18.992 -06:00 [INF] Hosting environment: Development
+2023-10-15 12:53:18.992 -06:00 [INF] Content root path: C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web
+2023-10-15 12:53:19.149 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger - -
+2023-10-15 12:53:19.518 -06:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference ' int' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-10-15 12:53:20.356 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger - - - 500 - text/html;+charset=utf-8 1212.2374ms
+2023-10-15 12:53:20.415 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - -
+2023-10-15 12:53:20.415 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_vs/browserLink - -
+2023-10-15 12:53:20.440 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - - - 200 12376 application/javascript;+charset=utf-8 17.6546ms
+2023-10-15 12:53:20.483 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 68.3340ms
+2023-10-15 12:53:21.250 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/favicon.ico - -
+2023-10-15 12:53:21.258 -06:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference ' int' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-10-15 12:53:21.279 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/favicon.ico - - - 500 - text/plain;+charset=utf-8 28.7309ms
+2023-10-15 13:13:55.908 -06:00 [INF] Registered 10 endpoints in 12410 milliseconds.
+2023-10-15 13:14:03.110 -06:00 [INF] Executed DbCommand (123ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-15 13:14:03.468 -06:00 [INF] Executed DbCommand (268ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-10-15 13:14:04.838 -06:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-15 13:14:05.457 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-15 13:14:05.459 -06:00 [INF] Hosting environment: Development
+2023-10-15 13:14:05.460 -06:00 [INF] Content root path: C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web
+2023-10-15 13:14:05.747 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger - -
+2023-10-15 13:14:06.784 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/index.html - -
+2023-10-15 13:14:06.811 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger - - - 302 - - 1074.5083ms
+2023-10-15 13:14:08.560 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/index.html - - - 200 - text/html;+charset=utf-8 1775.5884ms
+2023-10-15 13:14:08.660 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - -
+2023-10-15 13:14:08.676 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - - - 200 12376 application/javascript;+charset=utf-8 8.6988ms
+2023-10-15 13:14:08.869 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_vs/browserLink - -
+2023-10-15 13:14:08.914 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 44.2052ms
+2023-10-15 13:14:09.632 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - -
+2023-10-15 13:14:09.758 -06:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-10-15 13:14:13.156 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - - - 200 - application/json;+charset=utf-8 3523.3008ms
+2023-10-15 13:16:25.022 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Persons application/json 102
+2023-10-15 13:16:25.035 -06:00 [INF] Executing endpoint 'HTTP: POST /Persons'
+2023-10-15 13:16:25.425 -06:00 [INF] Handling CreatePersonCommand
+2023-10-15 13:16:25.426 -06:00 [INF] Property firstName : Alan
+2023-10-15 13:16:25.427 -06:00 [INF] Property lastName : Ceron
+2023-10-15 13:16:25.427 -06:00 [INF] Property age : 27
+2023-10-15 13:16:25.428 -06:00 [INF] Property email : diegoceron.dev@outlook.com
+2023-10-15 13:16:25.436 -06:00 [INF] Property status : {"Name":"Active","Value":1,"$type":"PersonStatus"}
+2023-10-15 13:16:26.516 -06:00 [INF] Executed DbCommand (112ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 80), @p2='?' (Size = 50), @p3='?' (Size = 50), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Person] ([Age], [Email], [FirstName], [LastName], [Status])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2023-10-15 13:16:26.623 -06:00 [INF] Handled CreatePersonCommand with Ardalis.Result.Result`1[System.Int32] in 1183 ms
+2023-10-15 13:16:26.672 -06:00 [INF] Executed endpoint 'HTTP: POST /Persons'
+2023-10-15 13:16:26.713 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Persons application/json 102 - 200 - application/json 1692.0630ms
+2023-10-15 13:17:13.942 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Students application/json 96
+2023-10-15 13:17:13.943 -06:00 [INF] Executing endpoint 'HTTP: POST /Students'
+2023-10-15 13:17:13.966 -06:00 [INF] Handling CreatePersonCommand
+2023-10-15 13:17:13.967 -06:00 [INF] Property firstName : ALAN
+2023-10-15 13:17:13.968 -06:00 [INF] Property lastName : CERON
+2023-10-15 13:17:13.970 -06:00 [INF] Property age : 33
+2023-10-15 13:17:13.971 -06:00 [INF] Property email : alan.dev@outlook.com
+2023-10-15 13:17:13.975 -06:00 [INF] Property status : {"Name":"Active","Value":1,"$type":"PersonStatus"}
+2023-10-15 13:17:14.031 -06:00 [INF] Executed DbCommand (34ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 80), @p2='?' (Size = 50), @p3='?' (Size = 50), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Person] ([Age], [Email], [FirstName], [LastName], [Status])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2023-10-15 13:17:14.054 -06:00 [INF] Handled CreatePersonCommand with Ardalis.Result.Result`1[System.Int32] in 78 ms
+2023-10-15 13:17:14.063 -06:00 [INF] Handling CreateStudentCommand
+2023-10-15 13:17:14.064 -06:00 [INF] Property idPerson : 7
+2023-10-15 13:17:14.182 -06:00 [INF] Executed DbCommand (24ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Student] ([PersonId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2023-10-15 13:17:14.196 -06:00 [INF] Handled CreateStudentCommand with Ardalis.Result.Result`1[System.Int32] in 132 ms
+2023-10-15 13:17:14.203 -06:00 [INF] Executed endpoint 'HTTP: POST /Students'
+2023-10-15 13:17:14.212 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Students application/json 96 - 200 - application/json 269.8035ms
+2023-10-15 13:17:36.043 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/Students/7 - -
+2023-10-15 13:17:36.069 -06:00 [INF] Executing endpoint 'HTTP: GET /Students/{StudentId:int}'
+2023-10-15 13:17:36.100 -06:00 [INF] Handling GetStudentQuery
+2023-10-15 13:17:36.101 -06:00 [INF] Property StudentId : 7
+2023-10-15 13:17:36.521 -06:00 [INF] Executed DbCommand (24ms) [Parameters=[@__studentId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[PersonId]
+FROM [Student] AS [s]
+WHERE [s].[Id] = @__studentId_0
+2023-10-15 13:17:36.597 -06:00 [INF] Handled GetStudentQuery with Ardalis.Result.Result`1[MembershipsNetCore.UseCases.Students.StudentDTO] in 495 ms
+2023-10-15 13:17:36.611 -06:00 [INF] Handling GetPersonQuery
+2023-10-15 13:17:36.612 -06:00 [INF] Property PersonId : 7
+2023-10-15 13:17:36.733 -06:00 [INF] Executed DbCommand (71ms) [Parameters=[@__personId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Age], [p].[Email], [p].[FirstName], [p].[LastName], [p].[Status]
+FROM [Person] AS [p]
+WHERE [p].[Id] = @__personId_0
+2023-10-15 13:17:36.794 -06:00 [INF] Handled GetPersonQuery with Ardalis.Result.Result`1[MembershipsNetCore.UseCases.Persons.PersonDTO] in 180 ms
+2023-10-15 13:17:36.833 -06:00 [INF] Executed endpoint 'HTTP: GET /Students/{StudentId:int}'
+2023-10-15 13:17:36.835 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/Students/7 - - - 200 - application/json 791.5354ms
