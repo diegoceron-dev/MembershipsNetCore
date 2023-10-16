@@ -131,3 +131,88 @@ END
 2023-10-16 12:25:54.064 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - -
 2023-10-16 12:25:54.093 -06:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
 2023-10-16 12:25:55.294 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - - - 200 - application/json;+charset=utf-8 1229.7541ms
+2023-10-16 15:27:27.344 -06:00 [INF] Registered 4 endpoints in 3120 milliseconds.
+2023-10-16 15:27:28.088 -06:00 [INF] No validators found in the system!
+2023-10-16 15:27:32.792 -06:00 [INF] Executed DbCommand (128ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-16 15:27:33.102 -06:00 [INF] Executed DbCommand (239ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-10-16 15:27:34.297 -06:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-16 15:27:34.653 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-16 15:27:34.654 -06:00 [INF] Hosting environment: Development
+2023-10-16 15:27:34.654 -06:00 [INF] Content root path: C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web
+2023-10-16 15:27:34.720 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger - -
+2023-10-16 15:27:35.112 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/index.html - -
+2023-10-16 15:27:35.120 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger - - - 302 - - 406.0877ms
+2023-10-16 15:27:36.181 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/index.html - - - 200 - text/html;+charset=utf-8 1068.5564ms
+2023-10-16 15:27:36.224 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - -
+2023-10-16 15:27:36.230 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - - - 200 12376 application/javascript;+charset=utf-8 5.4888ms
+2023-10-16 15:27:36.410 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_vs/browserLink - -
+2023-10-16 15:27:36.472 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 62.2617ms
+2023-10-16 15:27:37.221 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - -
+2023-10-16 15:27:37.242 -06:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-10-16 15:27:39.554 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - - - 200 - application/json;+charset=utf-8 2332.9691ms
+2023-10-16 15:28:00.186 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Teachers application/json 113
+2023-10-16 15:28:00.233 -06:00 [INF] Executing endpoint 'HTTP: POST /Teachers'
+2023-10-16 15:28:00.631 -06:00 [INF] Handling CreatePersonCommand
+2023-10-16 15:28:00.633 -06:00 [INF] Property firstName : PROFE MARCO
+2023-10-16 15:28:00.633 -06:00 [INF] Property lastName : RABADILLA
+2023-10-16 15:28:00.634 -06:00 [INF] Property age : 28
+2023-10-16 15:28:00.635 -06:00 [INF] Property email : diegoceron.dev@outlook.com
+2023-10-16 15:28:00.643 -06:00 [INF] Property status : {"Name":"Active","Value":1,"$type":"PersonStatus"}
+2023-10-16 15:28:01.421 -06:00 [INF] Executed DbCommand (107ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 80), @p2='?' (Size = 50), @p3='?' (Size = 50), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Person] ([Age], [Email], [FirstName], [LastName], [Status])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2023-10-16 15:28:01.544 -06:00 [INF] Handled CreatePersonCommand with Ardalis.Result.Result`1[System.Int32] in 895 ms
+2023-10-16 15:28:01.548 -06:00 [INF] Handling CreateTeacherCommand
+2023-10-16 15:28:01.549 -06:00 [INF] Property idPerson : 8
+2023-10-16 15:28:01.627 -06:00 [INF] Executed DbCommand (18ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Teacher] ([PersonId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2023-10-16 15:28:01.635 -06:00 [INF] Handled CreateTeacherCommand with Ardalis.Result.Result`1[System.Int32] in 85 ms
+2023-10-16 15:28:01.665 -06:00 [INF] Executed endpoint 'HTTP: POST /Teachers'
+2023-10-16 15:28:01.676 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Teachers application/json 113 - 200 - application/json 1490.3519ms
+2023-10-16 15:28:21.202 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/Teachers/4 - -
+2023-10-16 15:28:21.205 -06:00 [INF] Executing endpoint 'HTTP: GET /Teachers/{TeacherId:int}'
+2023-10-16 15:28:21.223 -06:00 [INF] Handling GetTeacherQuery
+2023-10-16 15:28:21.223 -06:00 [INF] Property TeacherId : 4
+2023-10-16 15:28:21.719 -06:00 [INF] Executed DbCommand (36ms) [Parameters=[@__teacherId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[PersonId]
+FROM [Teacher] AS [t]
+WHERE [t].[Id] = @__teacherId_0
+2023-10-16 15:28:21.800 -06:00 [INF] Handled GetTeacherQuery with Ardalis.Result.Result`1[MembershipsNetCore.UseCases.Teachers.TeacherDTO] in 576 ms
+2023-10-16 15:28:21.811 -06:00 [INF] Handling GetPersonQuery
+2023-10-16 15:28:21.812 -06:00 [INF] Property PersonId : 8
+2023-10-16 15:28:21.866 -06:00 [INF] Executed DbCommand (9ms) [Parameters=[@__personId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Age], [p].[Email], [p].[FirstName], [p].[LastName], [p].[Status]
+FROM [Person] AS [p]
+WHERE [p].[Id] = @__personId_0
+2023-10-16 15:28:21.904 -06:00 [INF] Handled GetPersonQuery with Ardalis.Result.Result`1[MembershipsNetCore.UseCases.Persons.PersonDTO] in 91 ms
+2023-10-16 15:28:21.937 -06:00 [INF] Executed endpoint 'HTTP: GET /Teachers/{TeacherId:int}'
+2023-10-16 15:28:21.945 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/Teachers/4 - - - 200 - application/json 742.8722ms
