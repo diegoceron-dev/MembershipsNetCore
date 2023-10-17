@@ -1,5 +1,4 @@
 ﻿using Ardalis.GuardClauses;
-using System.Xml.Linq;
 using Ardalis.SharedKernel;
 using MembershipsNetCore.Core.StudentAggregate;
 using MembershipsNetCore.Core.TeacherAggregate;
