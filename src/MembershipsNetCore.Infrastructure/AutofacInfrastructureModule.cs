@@ -11,6 +11,7 @@ using MembershipsNetCore.UseCases.Contributors.List;
 using MediatR;
 using MediatR.Pipeline;
 using Module = Autofac.Module;
+using MembershipsNetCore.UseCases.Classes.List;
 
 namespace MembershipsNetCore.Infrastructure;
 
@@ -121,6 +122,9 @@ public class AutofacInfrastructureModule : Module
       .As<IListContributorsQueryService>()
       .InstancePerLifetimeScope();
 
+    builder.RegisterType<ListClassQueryService>()
+    .As<IListClassesQueryService>()
+    .InstancePerLifetimeScope();
   }
 
   private void RegisterProductionOnlyDependencies(ContainerBuilder builder)
@@ -131,6 +135,10 @@ public class AutofacInfrastructureModule : Module
 
     builder.RegisterType<ListContributorsQueryService>()
       .As<IListContributorsQueryService>()
+      .InstancePerLifetimeScope();
+
+    builder.RegisterType<ListClassQueryService>()
+      .As<IListClassesQueryService>()
       .InstancePerLifetimeScope();
 
   }

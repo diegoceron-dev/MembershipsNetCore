@@ -629,3 +629,213 @@ WHERE [c].[Id] = @__classId_0
 2023-10-16 19:11:10.226 -06:00 [INF] Handled GetClassQuery with Ardalis.Result.Result`1[MembershipsNetCore.UseCases.Classes.ClassDTO] in 129 ms
 2023-10-16 19:11:10.230 -06:00 [INF] Executed endpoint 'HTTP: GET /Classes/{ClassId:int}'
 2023-10-16 19:11:10.232 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/Classes/1 - - - 200 - application/json 159.2437ms
+2023-10-16 21:43:56.803 -06:00 [INF] Registered 7 endpoints in 3705 milliseconds.
+2023-10-16 21:44:00.090 -06:00 [INF] Executed DbCommand (116ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-16 21:44:00.394 -06:00 [INF] Executed DbCommand (220ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-10-16 21:44:01.788 -06:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-16 21:44:02.206 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-16 21:44:02.209 -06:00 [INF] Hosting environment: Development
+2023-10-16 21:44:02.211 -06:00 [INF] Content root path: C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web
+2023-10-16 21:44:02.348 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger - -
+2023-10-16 21:44:02.912 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/index.html - -
+2023-10-16 21:44:02.961 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger - - - 302 - - 621.6923ms
+2023-10-16 21:44:04.051 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/index.html - - - 200 - text/html;+charset=utf-8 1139.4948ms
+2023-10-16 21:44:04.115 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - -
+2023-10-16 21:44:04.123 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - - - 200 12376 application/javascript;+charset=utf-8 7.4664ms
+2023-10-16 21:44:04.316 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_vs/browserLink - -
+2023-10-16 21:44:04.365 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 49.6429ms
+2023-10-16 21:44:05.298 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - -
+2023-10-16 21:44:05.319 -06:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-10-16 21:44:07.829 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - - - 200 - application/json;+charset=utf-8 2531.3592ms
+2023-10-16 21:45:16.825 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/Contributors - -
+2023-10-16 21:45:16.878 -06:00 [INF] Executing endpoint 'HTTP: GET /Contributors'
+2023-10-16 21:45:42.201 -06:00 [INF] Handling ListContributorsQuery
+2023-10-16 21:45:42.324 -06:00 [INF] Property Skip : null
+2023-10-16 21:45:42.325 -06:00 [INF] Property Take : null
+2023-10-16 21:45:42.337 -06:00 [INF] Handled ListContributorsQuery with Ardalis.Result.Result`1[System.Collections.Generic.IEnumerable`1[MembershipsNetCore.UseCases.Contributors.ContributorDTO]] in 11 ms
+2023-10-16 21:46:22.473 -06:00 [INF] Executed endpoint 'HTTP: GET /Contributors'
+2023-10-16 21:46:22.476 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/Contributors - - - 200 - application/json 65649.9832ms
+2023-10-16 21:46:31.213 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/Contributors - -
+2023-10-16 21:46:31.215 -06:00 [INF] Executing endpoint 'HTTP: GET /Contributors'
+2023-10-16 21:46:49.653 -06:00 [INF] Handling ListContributorsQuery
+2023-10-16 21:46:49.654 -06:00 [INF] Property Skip : null
+2023-10-16 21:46:49.655 -06:00 [INF] Property Take : null
+2023-10-16 22:21:24.369 -06:00 [INF] Handled ListContributorsQuery with Ardalis.Result.Result`1[System.Collections.Generic.IEnumerable`1[MembershipsNetCore.UseCases.Contributors.ContributorDTO]] in 2074713 ms
+2023-10-16 22:21:24.373 -06:00 [INF] Executed endpoint 'HTTP: GET /Contributors'
+2023-10-16 22:21:24.375 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/Contributors - - - 200 - application/json 2093161.1519ms
+2023-10-16 23:10:56.016 -06:00 [INF] Registered 8 endpoints in 3044 milliseconds.
+2023-10-16 23:11:00.104 -06:00 [INF] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-16 23:11:00.284 -06:00 [INF] Executed DbCommand (143ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-10-16 23:11:00.839 -06:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-16 23:11:01.026 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-16 23:11:01.026 -06:00 [INF] Hosting environment: Development
+2023-10-16 23:11:01.027 -06:00 [INF] Content root path: C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web
+2023-10-16 23:11:01.071 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger - -
+2023-10-16 23:11:01.294 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/index.html - -
+2023-10-16 23:11:01.299 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger - - - 302 - - 230.5327ms
+2023-10-16 23:11:01.888 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/index.html - - - 200 - text/html;+charset=utf-8 594.3332ms
+2023-10-16 23:11:01.933 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - -
+2023-10-16 23:11:01.949 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - - - 200 12376 application/javascript;+charset=utf-8 7.8015ms
+2023-10-16 23:11:02.386 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_vs/browserLink - -
+2023-10-16 23:11:02.428 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 41.3522ms
+2023-10-16 23:11:03.309 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - -
+2023-10-16 23:11:03.331 -06:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-10-16 23:11:05.121 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - - - 200 - application/json;+charset=utf-8 1812.2498ms
+2023-10-16 23:11:49.978 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/Classes - -
+2023-10-16 23:11:50.041 -06:00 [INF] Executing endpoint 'HTTP: GET /Classes'
+2023-10-16 23:11:50.216 -06:00 [INF] Handling ListClassesQuery
+2023-10-16 23:11:50.217 -06:00 [INF] Property Skip : null
+2023-10-16 23:11:50.218 -06:00 [INF] Property Take : null
+2023-10-16 23:11:50.502 -06:00 [INF] Executed endpoint 'HTTP: GET /Classes'
+2023-10-16 23:11:50.508 -06:00 [ERR] An unhandled exception has occurred while executing the request.
+Autofac.Core.DependencyResolutionException: An exception was thrown while activating MembershipsNetCore.UseCases.Classes.List.IListClassesHandler.
+ ---> Autofac.Core.DependencyResolutionException: None of the constructors found on type 'MembershipsNetCore.UseCases.Classes.List.IListClassesHandler' can be invoked with the available services and parameters:
+Cannot resolve parameter 'MembershipsNetCore.UseCases.Classes.List.IListClassesQueryService query' of constructor 'Void .ctor(MembershipsNetCore.UseCases.Classes.List.IListClassesQueryService)'.
+
+See https://autofac.rtfd.io/help/no-constructors-bindable for more info.
+   at Autofac.Core.Activators.Reflection.ReflectionActivator.<>c__DisplayClass14_0.<UseSingleConstructorActivation>b__0(ResolveRequestContext ctxt, Action`1 next)
+   at Autofac.Core.Resolving.Middleware.DelegateMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Middleware.DisposalTrackingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Middleware.ActivatorErrorHandlingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   --- End of inner exception stack trace ---
+   at Autofac.Core.Resolving.Middleware.ActivatorErrorHandlingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Middleware.RegistrationPipelineInvokeMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Middleware.SharingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Middleware.CircularDependencyDetectorMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.ResolveOperation.GetOrCreateInstance(ISharingLifetimeScope currentOperationScope, ResolveRequest request)
+   at Autofac.Core.Resolving.ResolveOperation.ExecuteOperation(ResolveRequest request)
+   at Autofac.ResolutionExtensions.TryResolveService(IComponentContext context, Service service, IEnumerable`1 parameters, Object& instance)
+   at Autofac.ResolutionExtensions.ResolveService(IComponentContext context, Service service, IEnumerable`1 parameters)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at Ardalis.SharedKernel.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MembershipsNetCore.Web.Endpoints.ClassEndpoints.List.HandleAsync(CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web\Classes\List\List.cs:line 28
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-10-16 23:11:50.620 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/Classes - - - 500 - text/plain;+charset=utf-8 641.9544ms
+2023-10-16 23:46:41.302 -06:00 [INF] Registered 8 endpoints in 10882 milliseconds.
+2023-10-16 23:46:46.332 -06:00 [INF] Executed DbCommand (68ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-16 23:46:46.643 -06:00 [INF] Executed DbCommand (223ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-10-16 23:46:47.820 -06:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-16 23:46:48.415 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-16 23:46:48.416 -06:00 [INF] Hosting environment: Development
+2023-10-16 23:46:48.416 -06:00 [INF] Content root path: C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web
+2023-10-16 23:46:48.670 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger - -
+2023-10-16 23:46:49.616 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/index.html - -
+2023-10-16 23:46:49.637 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger - - - 302 - - 973.5322ms
+2023-10-16 23:46:51.037 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/index.html - - - 200 - text/html;+charset=utf-8 1422.1725ms
+2023-10-16 23:46:51.087 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - -
+2023-10-16 23:46:51.099 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - - - 200 12376 application/javascript;+charset=utf-8 8.2657ms
+2023-10-16 23:46:51.341 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_vs/browserLink - -
+2023-10-16 23:46:51.491 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 149.3528ms
+2023-10-16 23:46:52.315 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - -
+2023-10-16 23:46:52.472 -06:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-10-16 23:46:56.186 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - - - 200 - application/json;+charset=utf-8 3871.4119ms
+2023-10-16 23:47:34.634 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/Classes - -
+2023-10-16 23:47:34.678 -06:00 [INF] Executing endpoint 'HTTP: GET /Classes'
+2023-10-16 23:47:35.098 -06:00 [INF] Handling ListClassesQuery
+2023-10-16 23:47:35.101 -06:00 [INF] Property Skip : null
+2023-10-16 23:47:35.102 -06:00 [INF] Property Take : null
+2023-10-16 23:47:35.280 -06:00 [INF] Executed endpoint 'HTTP: GET /Classes'
+2023-10-16 23:47:35.284 -06:00 [ERR] An unhandled exception has occurred while executing the request.
+Autofac.Core.DependencyResolutionException: An exception was thrown while activating MembershipsNetCore.UseCases.Classes.List.ListClassesHandler.
+ ---> Autofac.Core.DependencyResolutionException: None of the constructors found on type 'MembershipsNetCore.UseCases.Classes.List.ListClassesHandler' can be invoked with the available services and parameters:
+Cannot resolve parameter 'MembershipsNetCore.UseCases.Classes.List.IListClassesQueryService query' of constructor 'Void .ctor(MembershipsNetCore.UseCases.Classes.List.IListClassesQueryService)'.
+
+See https://autofac.rtfd.io/help/no-constructors-bindable for more info.
+   at Autofac.Core.Activators.Reflection.ReflectionActivator.<>c__DisplayClass14_0.<UseSingleConstructorActivation>b__0(ResolveRequestContext ctxt, Action`1 next)
+   at Autofac.Core.Resolving.Middleware.DisposalTrackingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Middleware.ActivatorErrorHandlingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   --- End of inner exception stack trace ---
+   at Autofac.Core.Resolving.Middleware.ActivatorErrorHandlingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Middleware.SharingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Middleware.CircularDependencyDetectorMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.ResolveOperation.GetOrCreateInstance(ISharingLifetimeScope currentOperationScope, ResolveRequest request)
+   at Autofac.Core.Resolving.ResolveOperation.ExecuteOperation(ResolveRequest request)
+   at Autofac.ResolutionExtensions.TryResolveService(IComponentContext context, Service service, IEnumerable`1 parameters, Object& instance)
+   at Autofac.ResolutionExtensions.ResolveService(IComponentContext context, Service service, IEnumerable`1 parameters)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at Ardalis.SharedKernel.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MembershipsNetCore.Web.Endpoints.ClassEndpoints.List.HandleAsync(CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web\Classes\List\List.cs:line 26
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-10-16 23:47:35.368 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/Classes - - - 500 - text/plain;+charset=utf-8 733.7420ms
