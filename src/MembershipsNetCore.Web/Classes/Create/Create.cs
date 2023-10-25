@@ -1,10 +1,9 @@
-﻿using MembershipsNetCore.Core.ClassAggregate;
-using Ardalis.SharedKernel;
-using FastEndpoints;
-using MembershipsNetCore.UseCases.Classes.Create;
-using MediatR;
+﻿using MembershipsNetCore.UseCases.Classes.Create;
 using MembershipsNetCore.Web.Classes.Create.DTOs;
 namespace MembershipsNetCore.Web.Classes.Create;
+using MembershipsNetCore.Core.ClassAggregate;
+using FastEndpoints;
+using MediatR;
 
 public class Create : Endpoint<CreateClassRequest, CreateClassResponse>
 {

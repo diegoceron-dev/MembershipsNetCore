@@ -4,6 +4,7 @@ using MembershipsNetCore.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MembershipsNetCore.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231024222154_AddAssignaments")]
+    partial class AddAssignaments
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,11 +36,11 @@ namespace MembershipsNetCore.Infrastructure.Migrations
                     b.Property<int>("ClassId")
                         .HasColumnType("int");
 
-                    b.Property<DateTimeOffset?>("DateEnd")
-                        .HasColumnType("datetimeoffset");
+                    b.Property<DateTime?>("DateEnd")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTimeOffset?>("DateInit")
-                        .HasColumnType("datetimeoffset");
+                    b.Property<DateTime?>("DateInit")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("TeacherId")
                         .HasColumnType("int");

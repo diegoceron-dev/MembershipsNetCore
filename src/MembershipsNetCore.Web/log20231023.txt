@@ -1,0 +1,31 @@
+2023-10-23 13:08:43.360 -06:00 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-23 13:08:43.538 -06:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-23 13:08:43.544 -06:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-23 13:08:43.547 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-23 13:08:43.613 -06:00 [INF] Executed DbCommand (31ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-10-23 13:08:43.640 -06:00 [INF] Applying migration '20231023190821_Assignament'.
+2023-10-23 13:08:43.838 -06:00 [INF] Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Assignment] (
+    [Id] int NOT NULL IDENTITY,
+    [DateInit] datetime2 NOT NULL,
+    [DateEnd] datetime2 NOT NULL,
+    [TeacherId] int NOT NULL,
+    [ClassId] int NOT NULL,
+    CONSTRAINT [PK_Assignment] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Assignment_Class_ClassId] FOREIGN KEY ([ClassId]) REFERENCES [Class] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Assignment_Teacher_TeacherId] FOREIGN KEY ([TeacherId]) REFERENCES [Teacher] ([Id]) ON DELETE CASCADE
+);
+2023-10-23 13:08:43.855 -06:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Assignment_ClassId] ON [Assignment] ([ClassId]);
+2023-10-23 13:08:43.859 -06:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Assignment_TeacherId] ON [Assignment] ([TeacherId]);
+2023-10-23 13:08:43.901 -06:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20231023190821_Assignament', N'7.0.12');

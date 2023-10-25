@@ -17,4 +17,8 @@
     <ProjectReference Include="..\MembershipsNetCore.Core\MembershipsNetCore.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Assignments\Delete\" />
+  </ItemGroup>
+
 </Project>
