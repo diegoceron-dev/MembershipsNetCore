@@ -2,8 +2,6 @@
 using MembershipsNetCore.Web.Assignments.Create.DTOs;
 using FastEndpoints;
 using MediatR;
-using MembershipsNetCore.Web.Classes.Create.DTOs;
-using System;
 
 namespace MembershipsNetCore.Web.Assignments.Create;
 

@@ -949,3 +949,43 @@ VALUES (@p0, @p1, @p2, @p3);
 2023-10-24 20:51:31.668 -06:00 [INF] Handled CreateAssignmentCommand with Ardalis.Result.Result`1[System.Int32] in 1511 ms
 2023-10-24 20:51:31.684 -06:00 [INF] Executed endpoint 'HTTP: POST /Assignments'
 2023-10-24 20:51:31.691 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Assignments application/json 91 - 200 - application/json 3338.1899ms
+2023-10-24 20:54:17.502 -06:00 [INF] Registered 9 endpoints in 704 milliseconds.
+2023-10-24 20:54:18.506 -06:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-24 20:54:18.539 -06:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-10-24 20:54:18.703 -06:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-24 20:54:18.767 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-24 20:54:18.767 -06:00 [INF] Hosting environment: Development
+2023-10-24 20:54:18.767 -06:00 [INF] Content root path: C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web
+2023-10-24 20:54:18.787 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger - -
+2023-10-24 20:54:18.872 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/index.html - -
+2023-10-24 20:54:18.879 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger - - - 302 - - 92.6103ms
+2023-10-24 20:54:19.047 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/index.html - - - 200 - text/html;+charset=utf-8 174.1341ms
+2023-10-24 20:54:19.063 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - -
+2023-10-24 20:54:19.067 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - - - 200 12376 application/javascript;+charset=utf-8 3.2063ms
+2023-10-24 20:54:19.168 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_vs/browserLink - -
+2023-10-24 20:54:19.186 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 18.4533ms
+2023-10-24 20:54:19.589 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - -
+2023-10-24 20:54:19.601 -06:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-10-24 20:54:20.436 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - - - 200 - application/json;+charset=utf-8 846.9447ms

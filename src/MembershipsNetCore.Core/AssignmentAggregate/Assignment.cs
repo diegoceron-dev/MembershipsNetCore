@@ -34,6 +34,4 @@ public class Assignment : EntityBase, IAggregateRoot
     TeacherId = Guard.Against.NegativeOrZero(teacherId, nameof(teacherId));
     TeacherId = Guard.Against.NegativeOrZero(classId, nameof(classId));
   }
-
-
-}
+ }

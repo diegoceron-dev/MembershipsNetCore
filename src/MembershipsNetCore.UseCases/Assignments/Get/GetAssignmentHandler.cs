@@ -21,6 +21,9 @@ public class GetAssignmentHandler : IQueryHandler<GetAssignmentQuery, Result<Ass
 
     if (entity == null) return Result.NotFound();
 
-    return new AssignmentDTO(entity.Id, Convert.ToDateTime(entity.DateInit), Convert.ToDateTime(entity.DateEnd), entity.TeacherId, entity.ClassId);
+    var nameTeacher = entity.Teacher?.Person?.FirstName!;
+    var clasName = entity.Class?.Name!;
+
+    return new AssignmentDTO(entity.Id, (DateTimeOffset)entity.DateInit!, (DateTimeOffset)entity.DateEnd!, entity.TeacherId, nameTeacher, entity.ClassId, clasName);
   }
 }

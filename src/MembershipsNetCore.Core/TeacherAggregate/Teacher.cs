@@ -9,7 +9,7 @@ public class Teacher : EntityBase, IAggregateRoot
   // Foreign Keys
 
   [ForeignKey("PersonId")]
-  public Person ?person { get; private set; }
+  public Person ?Person { get; private set; }
   public int PersonId { get; private set; }
 
   public Teacher(int personId)
