@@ -9,9 +9,9 @@ public class AssignmentByFiltersSpec : Specification<Assignment>
     Query
       .Include(assignment => assignment.Class)
       .Include(assignment => assignment.Teacher)
-      .Include(assignment => assignment!.Teacher!.Person) 
-      .Where(assignment => teacherId != null && assignment.TeacherId == teacherId)
-      .Where(assignment => classId != null && assignment.ClassId == classId);
+      .Include(assignment => assignment!.Teacher!.Person);
+      //.Where(assignment => teacherId != null && assignment.TeacherId == teacherId)
+      //.Where(assignment => classId != null && assignment.ClassId == classId);
   }
 }
 
