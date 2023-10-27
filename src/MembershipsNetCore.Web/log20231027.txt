@@ -230,3 +230,59 @@ WHERE [Id] = @p0;
 2023-10-27 00:25:37.868 -06:00 [INF] Handled DeleteAsssignmentCommand with Ardalis.Result.Result in 33 ms
 2023-10-27 00:25:37.868 -06:00 [INF] Executed endpoint 'HTTP: DELETE /Assignments/{AssignmentId:int}'
 2023-10-27 00:25:37.869 -06:00 [INF] Request finished HTTP/2 DELETE https://localhost:44325/Assignments/11 - - - 204 - - 35.1996ms
+2023-10-27 00:32:01.847 -06:00 [INF] Registered 12 endpoints in 2441 milliseconds.
+2023-10-27 00:32:05.024 -06:00 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-27 00:32:05.179 -06:00 [INF] Executed DbCommand (124ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-10-27 00:32:05.738 -06:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-27 00:32:05.901 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-27 00:32:05.902 -06:00 [INF] Hosting environment: Development
+2023-10-27 00:32:05.902 -06:00 [INF] Content root path: C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web
+2023-10-27 00:32:05.954 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger - -
+2023-10-27 00:32:06.210 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/index.html - -
+2023-10-27 00:32:06.244 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger - - - 302 - - 279.1099ms
+2023-10-27 00:32:06.719 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/index.html - - - 200 - text/html;+charset=utf-8 508.4186ms
+2023-10-27 00:32:06.771 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - -
+2023-10-27 00:32:06.788 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - - - 200 12376 application/javascript;+charset=utf-8 7.5182ms
+2023-10-27 00:32:07.009 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_vs/browserLink - -
+2023-10-27 00:32:07.049 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 42.0391ms
+2023-10-27 00:32:07.781 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - -
+2023-10-27 00:32:07.809 -06:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-10-27 00:32:09.595 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - - - 200 - application/json;+charset=utf-8 1814.3986ms
+2023-10-27 00:33:33.035 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/Assignments - -
+2023-10-27 00:33:33.054 -06:00 [INF] Executing endpoint 'HTTP: GET /Assignments'
+2023-10-27 00:33:33.175 -06:00 [INF] Handling ListAssignmentQuery
+2023-10-27 00:33:33.176 -06:00 [INF] Property Skip : null
+2023-10-27 00:33:33.177 -06:00 [INF] Property Take : null
+2023-10-27 00:33:33.177 -06:00 [INF] Property ClassId : null
+2023-10-27 00:33:33.178 -06:00 [INF] Property TeacherId : null
+2023-10-27 00:33:33.691 -06:00 [INF] Executed DbCommand (59ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClassId], [a].[DateEnd], [a].[DateInit], [a].[TeacherId], [c].[Id], [c].[Name], [c].[Status], [t].[Id], [t].[PersonId], [p].[Id], [p].[Age], [p].[Email], [p].[FirstName], [p].[LastName], [p].[Status]
+FROM [Assignment] AS [a]
+INNER JOIN [Class] AS [c] ON [a].[ClassId] = [c].[Id]
+INNER JOIN [Teacher] AS [t] ON [a].[TeacherId] = [t].[Id]
+INNER JOIN [Person] AS [p] ON [t].[PersonId] = [p].[Id]
+2023-10-27 00:33:44.941 -06:00 [INF] Handled ListAssignmentQuery with Ardalis.Result.Result`1[System.Collections.Generic.IEnumerable`1[MembershipsNetCore.UseCases.Assignments.AssignmentDTO]] in 11762 ms
+2023-10-27 00:33:45.025 -06:00 [INF] Executed endpoint 'HTTP: GET /Assignments'
+2023-10-27 00:33:45.036 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/Assignments - - - 200 - application/json 12001.4215ms
