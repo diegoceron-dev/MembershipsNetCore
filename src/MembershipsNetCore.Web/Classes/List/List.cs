@@ -29,7 +29,10 @@ public class List : EndpointWithoutRequest<ListClassResponse>
     {
       Response = new ListClassResponse
       {
-        Classes = result.Value.Select(c => new ClassRecord(c.Id, c.Name, c.Status!)).ToList()
+        Classes = result.Value.
+        Select(c => new 
+          ClassRecord(c.Id, c.Name, c.Status!)
+        ).ToList()
       };
     }
   }

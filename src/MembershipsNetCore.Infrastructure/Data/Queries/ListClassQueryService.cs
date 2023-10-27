@@ -16,9 +16,9 @@ public class ListClassQueryService : IListClassesQueryService
 
   public async Task<IEnumerable<ClassDTO>> ListAsync()
   {
-    var entity = (await (_repository).ListAsync()).Select(c => new ClassDTO(c.Id, c.Name, c.Status));
+        var entity = (await (_repository).ListAsync()).Select(c => new ClassDTO(c.Id, c.Name, c.Status));
 
-    if (entity == null) return Enumerable.Empty<ClassDTO>();
+        if (entity == null) return Enumerable.Empty<ClassDTO>();
 
     return entity;
   }

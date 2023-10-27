@@ -7,6 +7,5 @@ public class TeacherByIdSpec: Specification<Teacher>
   {
     Query.Where(teacher => teacher.Id == teacherId)
            .Include(teacher => teacher.Person);
-           //.Where(c=> c.PersonId == 1);
   }
 }
