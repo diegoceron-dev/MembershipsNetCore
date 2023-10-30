@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using MembershipsNetCore.Core.AssignmentAggregate;
-using System.Reflection.Emit;
 
 namespace MembershipsNetCore.Infrastructure.Data.Config;
 public class AssignmentConfiguration : IEntityTypeConfiguration<Assignment>

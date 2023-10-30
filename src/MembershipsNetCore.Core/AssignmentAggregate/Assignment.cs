@@ -20,7 +20,6 @@ public class Assignment : EntityBase, IAggregateRoot
 
   public Assignment(DateTimeOffset? dateInit, DateTimeOffset? dateEnd, int teacherId, int classId)
   {
-
     DateInit = Guard.Against.Null(dateInit, nameof(dateInit));
     DateEnd = Guard.Against.Null(dateEnd, nameof(dateEnd));
     TeacherId = Guard.Against.NegativeOrZero(teacherId, nameof(teacherId));

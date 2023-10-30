@@ -1,0 +1,679 @@
+2023-10-30 09:51:51.898 -06:00 [INF] Registered 13 endpoints in 9909 milliseconds.
+2023-10-30 09:51:57.894 -06:00 [INF] Executed DbCommand (56ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-30 09:51:58.058 -06:00 [INF] Executed DbCommand (124ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-10-30 09:51:58.697 -06:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-30 09:51:58.980 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-30 09:51:58.981 -06:00 [INF] Hosting environment: Development
+2023-10-30 09:51:58.981 -06:00 [INF] Content root path: C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web
+2023-10-30 09:51:59.108 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger - -
+2023-10-30 09:51:59.738 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/index.html - -
+2023-10-30 09:51:59.756 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger - - - 302 - - 653.5674ms
+2023-10-30 09:52:00.864 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/index.html - - - 200 - text/html;+charset=utf-8 1126.3596ms
+2023-10-30 09:52:00.891 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - -
+2023-10-30 09:52:00.901 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - - - 200 12376 application/javascript;+charset=utf-8 9.0249ms
+2023-10-30 09:52:01.089 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_vs/browserLink - -
+2023-10-30 09:52:01.167 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 77.6444ms
+2023-10-30 09:52:01.693 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - -
+2023-10-30 09:52:01.776 -06:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-10-30 09:52:04.346 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - - - 200 - application/json;+charset=utf-8 2652.4178ms
+2023-10-30 09:53:53.870 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Schedule application/json 21
+2023-10-30 09:53:53.894 -06:00 [INF] Executing endpoint 'HTTP: POST /Schedule'
+2023-10-30 09:53:54.186 -06:00 [INF] Handling CreateScheduleCommand
+2023-10-30 09:53:54.190 -06:00 [INF] Property ScheduleList : []
+2023-10-30 09:53:54.197 -06:00 [INF] Handled CreateScheduleCommand with Ardalis.Result.Result`1[System.Collections.Generic.List`1[System.Int32]] in 5 ms
+2023-10-30 09:53:54.202 -06:00 [INF] Executed endpoint 'HTTP: POST /Schedule'
+2023-10-30 09:53:54.204 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Schedule application/json 21 - 204 - - 334.5640ms
+2023-10-30 09:54:03.365 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Schedule application/json 21
+2023-10-30 09:54:03.366 -06:00 [INF] Executing endpoint 'HTTP: POST /Schedule'
+2023-10-30 09:54:03.368 -06:00 [INF] Handling CreateScheduleCommand
+2023-10-30 09:54:03.369 -06:00 [INF] Property ScheduleList : []
+2023-10-30 09:54:03.370 -06:00 [INF] Handled CreateScheduleCommand with Ardalis.Result.Result`1[System.Collections.Generic.List`1[System.Int32]] in 0 ms
+2023-10-30 09:54:03.370 -06:00 [INF] Executed endpoint 'HTTP: POST /Schedule'
+2023-10-30 09:54:03.371 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Schedule application/json 21 - 204 - - 5.5078ms
+2023-10-30 09:54:03.951 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Schedule application/json 21
+2023-10-30 09:54:03.952 -06:00 [INF] Executing endpoint 'HTTP: POST /Schedule'
+2023-10-30 09:54:03.953 -06:00 [INF] Handling CreateScheduleCommand
+2023-10-30 09:54:03.953 -06:00 [INF] Property ScheduleList : []
+2023-10-30 09:54:03.954 -06:00 [INF] Handled CreateScheduleCommand with Ardalis.Result.Result`1[System.Collections.Generic.List`1[System.Int32]] in 0 ms
+2023-10-30 09:54:03.954 -06:00 [INF] Executed endpoint 'HTTP: POST /Schedule'
+2023-10-30 09:54:03.954 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Schedule application/json 21 - 204 - - 2.8880ms
+2023-10-30 09:54:04.493 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Schedule application/json 21
+2023-10-30 09:54:04.493 -06:00 [INF] Executing endpoint 'HTTP: POST /Schedule'
+2023-10-30 09:54:04.494 -06:00 [INF] Handling CreateScheduleCommand
+2023-10-30 09:54:04.494 -06:00 [INF] Property ScheduleList : []
+2023-10-30 09:54:04.495 -06:00 [INF] Handled CreateScheduleCommand with Ardalis.Result.Result`1[System.Collections.Generic.List`1[System.Int32]] in 0 ms
+2023-10-30 09:54:04.495 -06:00 [INF] Executed endpoint 'HTTP: POST /Schedule'
+2023-10-30 09:54:04.495 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Schedule application/json 21 - 204 - - 2.3922ms
+2023-10-30 09:54:05.087 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Schedule application/json 21
+2023-10-30 09:54:05.088 -06:00 [INF] Executing endpoint 'HTTP: POST /Schedule'
+2023-10-30 09:54:05.088 -06:00 [INF] Handling CreateScheduleCommand
+2023-10-30 09:54:05.088 -06:00 [INF] Property ScheduleList : []
+2023-10-30 09:54:05.089 -06:00 [INF] Handled CreateScheduleCommand with Ardalis.Result.Result`1[System.Collections.Generic.List`1[System.Int32]] in 0 ms
+2023-10-30 09:54:05.089 -06:00 [INF] Executed endpoint 'HTTP: POST /Schedule'
+2023-10-30 09:54:05.090 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Schedule application/json 21 - 204 - - 2.3853ms
+2023-10-30 09:54:05.535 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Schedule application/json 21
+2023-10-30 09:54:05.536 -06:00 [INF] Executing endpoint 'HTTP: POST /Schedule'
+2023-10-30 09:54:05.536 -06:00 [INF] Handling CreateScheduleCommand
+2023-10-30 09:54:05.536 -06:00 [INF] Property ScheduleList : []
+2023-10-30 09:54:05.537 -06:00 [INF] Handled CreateScheduleCommand with Ardalis.Result.Result`1[System.Collections.Generic.List`1[System.Int32]] in 0 ms
+2023-10-30 09:54:05.537 -06:00 [INF] Executed endpoint 'HTTP: POST /Schedule'
+2023-10-30 09:54:05.538 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Schedule application/json 21 - 204 - - 2.3433ms
+2023-10-30 09:54:05.741 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Schedule application/json 21
+2023-10-30 09:54:05.741 -06:00 [INF] Executing endpoint 'HTTP: POST /Schedule'
+2023-10-30 09:54:05.742 -06:00 [INF] Handling CreateScheduleCommand
+2023-10-30 09:54:05.742 -06:00 [INF] Property ScheduleList : []
+2023-10-30 09:54:05.743 -06:00 [INF] Handled CreateScheduleCommand with Ardalis.Result.Result`1[System.Collections.Generic.List`1[System.Int32]] in 0 ms
+2023-10-30 09:54:05.744 -06:00 [INF] Executed endpoint 'HTTP: POST /Schedule'
+2023-10-30 09:54:05.744 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Schedule application/json 21 - 204 - - 3.3294ms
+2023-10-30 09:54:05.952 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Schedule application/json 21
+2023-10-30 09:54:05.953 -06:00 [INF] Executing endpoint 'HTTP: POST /Schedule'
+2023-10-30 09:54:05.953 -06:00 [INF] Handling CreateScheduleCommand
+2023-10-30 09:54:05.953 -06:00 [INF] Property ScheduleList : []
+2023-10-30 09:54:05.954 -06:00 [INF] Handled CreateScheduleCommand with Ardalis.Result.Result`1[System.Collections.Generic.List`1[System.Int32]] in 0 ms
+2023-10-30 09:54:05.955 -06:00 [INF] Executed endpoint 'HTTP: POST /Schedule'
+2023-10-30 09:54:05.955 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Schedule application/json 21 - 204 - - 2.5688ms
+2023-10-30 09:54:13.248 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Schedule application/json 21
+2023-10-30 09:54:13.248 -06:00 [INF] Executing endpoint 'HTTP: POST /Schedule'
+2023-10-30 09:54:17.711 -06:00 [INF] Handling CreateScheduleCommand
+2023-10-30 09:54:17.712 -06:00 [INF] Property ScheduleList : []
+2023-10-30 09:54:17.713 -06:00 [INF] Handled CreateScheduleCommand with Ardalis.Result.Result`1[System.Collections.Generic.List`1[System.Int32]] in 0 ms
+2023-10-30 09:54:19.358 -06:00 [INF] Executed endpoint 'HTTP: POST /Schedule'
+2023-10-30 09:54:19.359 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Schedule application/json 21 - 204 - - 6111.2373ms
+2023-10-30 09:54:21.274 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Schedule application/json 21
+2023-10-30 09:54:21.274 -06:00 [INF] Executing endpoint 'HTTP: POST /Schedule'
+2023-10-30 09:54:26.180 -06:00 [INF] Handling CreateScheduleCommand
+2023-10-30 09:54:26.180 -06:00 [INF] Property ScheduleList : []
+2023-10-30 09:54:26.181 -06:00 [INF] Handled CreateScheduleCommand with Ardalis.Result.Result`1[System.Collections.Generic.List`1[System.Int32]] in 0 ms
+2023-10-30 09:54:35.371 -06:00 [INF] Executed endpoint 'HTTP: POST /Schedule'
+2023-10-30 09:54:35.372 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Schedule application/json 21 - 204 - - 14098.0011ms
+2023-10-30 09:59:17.368 -06:00 [INF] Registered 13 endpoints in 2095 milliseconds.
+2023-10-30 09:59:20.813 -06:00 [INF] Executed DbCommand (95ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-30 09:59:21.003 -06:00 [INF] Executed DbCommand (132ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-10-30 09:59:21.486 -06:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-30 09:59:21.645 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-30 09:59:21.646 -06:00 [INF] Hosting environment: Development
+2023-10-30 09:59:21.646 -06:00 [INF] Content root path: C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web
+2023-10-30 09:59:21.703 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger - -
+2023-10-30 09:59:21.960 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger - - - 302 - - 261.7529ms
+2023-10-30 09:59:22.006 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/index.html - -
+2023-10-30 09:59:22.565 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/index.html - - - 200 - text/html;+charset=utf-8 559.5332ms
+2023-10-30 09:59:22.601 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - -
+2023-10-30 09:59:22.612 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - - - 200 12376 application/javascript;+charset=utf-8 10.4035ms
+2023-10-30 09:59:22.972 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_vs/browserLink - -
+2023-10-30 09:59:23.024 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 53.1716ms
+2023-10-30 09:59:23.344 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - -
+2023-10-30 09:59:23.366 -06:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-10-30 09:59:25.110 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - - - 200 - application/json;+charset=utf-8 1766.1649ms
+2023-10-30 10:00:57.661 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Schedules application/json 21
+2023-10-30 10:00:57.678 -06:00 [INF] Executing endpoint 'HTTP: POST /Schedules'
+2023-10-30 10:01:05.118 -06:00 [INF] Handling CreateScheduleCommand
+2023-10-30 10:01:05.129 -06:00 [INF] Property ScheduleList : []
+2023-10-30 10:01:15.369 -06:00 [INF] Handled CreateScheduleCommand with Ardalis.Result.Result`1[System.Collections.Generic.List`1[System.Int32]] in 10234 ms
+2023-10-30 10:01:15.424 -06:00 [INF] Executed endpoint 'HTTP: POST /Schedules'
+2023-10-30 10:01:15.451 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Schedules application/json 21 - 200 - application/json 17789.9154ms
+2023-10-30 10:04:12.735 -06:00 [INF] Registered 13 endpoints in 2493 milliseconds.
+2023-10-30 10:04:16.548 -06:00 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-30 10:04:16.715 -06:00 [INF] Executed DbCommand (139ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-10-30 10:04:17.539 -06:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-30 10:04:17.850 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-30 10:04:17.852 -06:00 [INF] Hosting environment: Development
+2023-10-30 10:04:17.852 -06:00 [INF] Content root path: C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web
+2023-10-30 10:04:17.944 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger - -
+2023-10-30 10:04:18.317 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/index.html - -
+2023-10-30 10:04:18.370 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger - - - 302 - - 415.4479ms
+2023-10-30 10:04:18.923 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/index.html - - - 200 - text/html;+charset=utf-8 606.1455ms
+2023-10-30 10:04:18.960 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - -
+2023-10-30 10:04:18.968 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - - - 200 12376 application/javascript;+charset=utf-8 7.6569ms
+2023-10-30 10:04:19.251 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_vs/browserLink - -
+2023-10-30 10:04:19.299 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 47.9755ms
+2023-10-30 10:04:19.585 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - -
+2023-10-30 10:04:19.615 -06:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-10-30 10:04:21.099 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - - - 200 - application/json;+charset=utf-8 1514.1800ms
+2023-10-30 10:05:04.533 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Schedules application/json 455
+2023-10-30 10:05:04.543 -06:00 [INF] Executing endpoint 'HTTP: POST /Schedules'
+2023-10-30 10:05:06.866 -06:00 [INF] Handling CreateScheduleCommand
+2023-10-30 10:05:06.887 -06:00 [INF] Property ScheduleList : [{"AssignmentId":1,"DayOfWeek":0,"HourOfDay":12,"QuarterOfHour":0,"$type":"ScheduleItem"},{"AssignmentId":1,"DayOfWeek":1,"HourOfDay":12,"QuarterOfHour":0,"$type":"ScheduleItem"},{"AssignmentId":1,"DayOfWeek":5,"HourOfDay":16,"QuarterOfHour":0,"$type":"ScheduleItem"},{"AssignmentId":1,"DayOfWeek":6,"HourOfDay":16,"QuarterOfHour":0,"$type":"ScheduleItem"}]
+2023-10-30 10:05:08.229 -06:00 [INF] Executed endpoint 'HTTP: POST /Schedules'
+2023-10-30 10:05:08.232 -06:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentException: Required input dayOfWeek cannot be zero or negative. (Parameter 'dayOfWeek')
+   at Ardalis.GuardClauses.GuardClauseExtensions.NegativeOrZero[T](IGuardClause guardClause, T input, String parameterName, String message)
+   at Ardalis.GuardClauses.GuardClauseExtensions.NegativeOrZero(IGuardClause guardClause, Int32 input, String parameterName, String message)
+   at MembershipsNetCore.Core.ScheduleAggregate.Schedule..ctor(Int32 assignmentId, Int32 dayOfWeek, Int32 hourOfDay, Int32 quarterOfHour) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Core\ScheduleAggregate\Schedule.cs:line 25
+   at MembershipsNetCore.UseCases.Schedules.Create.CreateAssigmentHandler.Handle(CreateScheduleCommand request, CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.UseCases\Schedules\Create\CreateScheduleHandler.cs:line 23
+   at Ardalis.SharedKernel.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MembershipsNetCore.Web.Schedules.Create.Create.HandleAsync(CreateScheduleRequest request, CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web\Schedules\Create\Create.cs:line 37
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-10-30 10:05:08.305 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Schedules application/json 455 - 500 - text/plain;+charset=utf-8 3771.9485ms
+2023-10-30 10:06:05.246 -06:00 [INF] Registered 13 endpoints in 2642 milliseconds.
+2023-10-30 10:06:07.341 -06:00 [INF] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-30 10:06:07.470 -06:00 [INF] Executed DbCommand (100ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-10-30 10:06:07.859 -06:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-30 10:06:08.051 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-30 10:06:08.052 -06:00 [INF] Hosting environment: Development
+2023-10-30 10:06:08.052 -06:00 [INF] Content root path: C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web
+2023-10-30 10:06:08.121 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger - -
+2023-10-30 10:06:08.369 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/index.html - -
+2023-10-30 10:06:08.377 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger - - - 302 - - 264.1079ms
+2023-10-30 10:06:08.794 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/index.html - - - 200 - text/html;+charset=utf-8 425.2323ms
+2023-10-30 10:06:08.831 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - -
+2023-10-30 10:06:08.838 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - - - 200 12376 application/javascript;+charset=utf-8 6.2054ms
+2023-10-30 10:06:09.029 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_vs/browserLink - -
+2023-10-30 10:06:09.088 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 58.4945ms
+2023-10-30 10:06:10.043 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - -
+2023-10-30 10:06:10.065 -06:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-10-30 10:06:11.364 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - - - 200 - application/json;+charset=utf-8 1321.3340ms
+2023-10-30 10:08:09.404 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Schedules application/json 455
+2023-10-30 10:08:09.438 -06:00 [INF] Executing endpoint 'HTTP: POST /Schedules'
+2023-10-30 10:08:11.568 -06:00 [INF] Handling CreateScheduleCommand
+2023-10-30 10:08:11.577 -06:00 [INF] Property ScheduleList : [{"AssignmentId":1,"DayOfWeek":0,"HourOfDay":12,"QuarterOfHour":0,"$type":"ScheduleItem"},{"AssignmentId":1,"DayOfWeek":1,"HourOfDay":12,"QuarterOfHour":0,"$type":"ScheduleItem"},{"AssignmentId":1,"DayOfWeek":5,"HourOfDay":16,"QuarterOfHour":0,"$type":"ScheduleItem"},{"AssignmentId":1,"DayOfWeek":6,"HourOfDay":16,"QuarterOfHour":0,"$type":"ScheduleItem"}]
+2023-10-30 10:08:13.497 -06:00 [ERR] Failed executing DbCommand (346ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Schedule] ([AssignmentId], [DayOfWeek], [HourOfDay], [QuarterOfHour])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);
+2023-10-30 10:08:13.554 -06:00 [ERR] An exception occurred in the database while saving changes for context type 'MembershipsNetCore.Infrastructure.Data.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Schedule'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:c6600530-a43f-40f1-ad2d-dacd6c27dcce
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Schedule'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:c6600530-a43f-40f1-ad2d-dacd6c27dcce
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2023-10-30 10:08:14.089 -06:00 [INF] Executed endpoint 'HTTP: POST /Schedules'
+2023-10-30 10:08:14.094 -06:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Schedule'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:c6600530-a43f-40f1-ad2d-dacd6c27dcce
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at MembershipsNetCore.Infrastructure.Data.AppDbContext.SaveChangesAsync(CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Infrastructure\Data\AppDbContext.cs:line 29
+   at Ardalis.Specification.EntityFrameworkCore.RepositoryBase`1.SaveChangesAsync(CancellationToken cancellationToken)
+   at Ardalis.Specification.EntityFrameworkCore.RepositoryBase`1.AddAsync(T entity, CancellationToken cancellationToken)
+   at MembershipsNetCore.UseCases.Schedules.Create.CreateAssigmentHandler.Handle(CreateScheduleCommand request, CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.UseCases\Schedules\Create\CreateScheduleHandler.cs:line 25
+   at Ardalis.SharedKernel.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MembershipsNetCore.Web.Schedules.Create.Create.HandleAsync(CreateScheduleRequest request, CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web\Schedules\Create\Create.cs:line 37
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-10-30 10:08:14.168 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Schedules application/json 455 - 500 - text/plain;+charset=utf-8 4764.0333ms
+2023-10-30 10:14:14.060 -06:00 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-30 10:14:14.175 -06:00 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-30 10:14:14.180 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-30 10:14:14.182 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-30 10:14:14.218 -06:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-10-30 10:14:14.247 -06:00 [INF] Applying migration '20231030160938_AddSchedules'.
+2023-10-30 10:14:14.425 -06:00 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Schedule] (
+    [Id] int NOT NULL IDENTITY,
+    [AssignmentId] int NOT NULL,
+    [DayOfWeek] int NOT NULL,
+    [HourOfDay] int NOT NULL,
+    [QuarterOfHour] int NOT NULL,
+    CONSTRAINT [PK_Schedule] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Schedule_Assignment_AssignmentId] FOREIGN KEY ([AssignmentId]) REFERENCES [Assignment] ([Id]) ON DELETE CASCADE
+);
+2023-10-30 10:14:14.438 -06:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Schedule_AssignmentId] ON [Schedule] ([AssignmentId]);
+2023-10-30 10:14:14.444 -06:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20231030160938_AddSchedules', N'7.0.12');
+2023-10-30 10:24:58.390 -06:00 [INF] Registered 13 endpoints in 2475 milliseconds.
+2023-10-30 10:25:00.468 -06:00 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-30 10:25:00.599 -06:00 [INF] Executed DbCommand (100ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-10-30 10:25:00.912 -06:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-30 10:25:01.063 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-30 10:25:01.064 -06:00 [INF] Hosting environment: Development
+2023-10-30 10:25:01.064 -06:00 [INF] Content root path: C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web
+2023-10-30 10:25:01.114 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger - -
+2023-10-30 10:25:01.301 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/index.html - -
+2023-10-30 10:25:01.327 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger - - - 302 - - 206.1721ms
+2023-10-30 10:25:01.712 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/index.html - - - 200 - text/html;+charset=utf-8 410.9466ms
+2023-10-30 10:25:01.769 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - -
+2023-10-30 10:25:01.779 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - - - 200 12376 application/javascript;+charset=utf-8 8.4831ms
+2023-10-30 10:25:01.978 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_vs/browserLink - -
+2023-10-30 10:25:02.021 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 43.0282ms
+2023-10-30 10:25:03.202 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - -
+2023-10-30 10:25:03.221 -06:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-10-30 10:25:04.262 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - - - 200 - application/json;+charset=utf-8 1059.2274ms
+2023-10-30 10:28:14.688 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Schedules application/json 455
+2023-10-30 10:28:14.707 -06:00 [INF] Executing endpoint 'HTTP: POST /Schedules'
+2023-10-30 10:28:17.791 -06:00 [INF] Handling CreateScheduleCommand
+2023-10-30 10:28:17.799 -06:00 [INF] Property ScheduleList : [{"AssignmentId":1,"DayOfWeek":0,"HourOfDay":12,"QuarterOfHour":0,"$type":"ScheduleItem"},{"AssignmentId":1,"DayOfWeek":1,"HourOfDay":12,"QuarterOfHour":0,"$type":"ScheduleItem"},{"AssignmentId":1,"DayOfWeek":5,"HourOfDay":16,"QuarterOfHour":0,"$type":"ScheduleItem"},{"AssignmentId":1,"DayOfWeek":6,"HourOfDay":16,"QuarterOfHour":0,"$type":"ScheduleItem"}]
+2023-10-30 10:28:20.741 -06:00 [INF] Executed DbCommand (78ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Schedule] ([AssignmentId], [DayOfWeek], [HourOfDay], [QuarterOfHour])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);
+2023-10-30 10:28:20.809 -06:00 [ERR] An exception occurred in the database while saving changes for context type 'MembershipsNetCore.Infrastructure.Data.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Schedule_Assignment_AssignmentId". The conflict occurred in database "MembershipsDB", table "dbo.Assignment", column 'Id'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:b9f7f6e3-824b-4224-88d5-28c477dc171e
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Schedule_Assignment_AssignmentId". The conflict occurred in database "MembershipsDB", table "dbo.Assignment", column 'Id'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:b9f7f6e3-824b-4224-88d5-28c477dc171e
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2023-10-30 10:28:21.231 -06:00 [INF] Executed endpoint 'HTTP: POST /Schedules'
+2023-10-30 10:28:21.240 -06:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Schedule_Assignment_AssignmentId". The conflict occurred in database "MembershipsDB", table "dbo.Assignment", column 'Id'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:b9f7f6e3-824b-4224-88d5-28c477dc171e
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at MembershipsNetCore.Infrastructure.Data.AppDbContext.SaveChangesAsync(CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Infrastructure\Data\AppDbContext.cs:line 29
+   at Ardalis.Specification.EntityFrameworkCore.RepositoryBase`1.SaveChangesAsync(CancellationToken cancellationToken)
+   at Ardalis.Specification.EntityFrameworkCore.RepositoryBase`1.AddAsync(T entity, CancellationToken cancellationToken)
+   at MembershipsNetCore.UseCases.Schedules.Create.CreateAssigmentHandler.Handle(CreateScheduleCommand request, CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.UseCases\Schedules\Create\CreateScheduleHandler.cs:line 25
+   at Ardalis.SharedKernel.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MembershipsNetCore.Web.Schedules.Create.Create.HandleAsync(CreateScheduleRequest request, CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web\Schedules\Create\Create.cs:line 37
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-10-30 10:28:21.311 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Schedules application/json 455 - 500 - text/plain;+charset=utf-8 6623.1781ms
+2023-10-30 10:55:51.543 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Schedules application/json 455
+2023-10-30 10:55:51.549 -06:00 [INF] Executing endpoint 'HTTP: POST /Schedules'
+2023-10-30 10:55:54.848 -06:00 [INF] Handling CreateScheduleCommand
+2023-10-30 10:55:54.849 -06:00 [INF] Property ScheduleList : [{"AssignmentId":4,"DayOfWeek":0,"HourOfDay":12,"QuarterOfHour":0,"$type":"ScheduleItem"},{"AssignmentId":4,"DayOfWeek":1,"HourOfDay":12,"QuarterOfHour":0,"$type":"ScheduleItem"},{"AssignmentId":4,"DayOfWeek":5,"HourOfDay":16,"QuarterOfHour":0,"$type":"ScheduleItem"},{"AssignmentId":4,"DayOfWeek":6,"HourOfDay":16,"QuarterOfHour":0,"$type":"ScheduleItem"}]
+2023-10-30 10:55:55.557 -06:00 [INF] Executed DbCommand (13ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Schedule] ([AssignmentId], [DayOfWeek], [HourOfDay], [QuarterOfHour])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);
+2023-10-30 10:55:55.567 -06:00 [ERR] An exception occurred in the database while saving changes for context type 'MembershipsNetCore.Infrastructure.Data.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Schedule_Assignment_AssignmentId". The conflict occurred in database "MembershipsDB", table "dbo.Assignment", column 'Id'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:47dfd26a-e138-46ad-85b0-37134f930ac5
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Schedule_Assignment_AssignmentId". The conflict occurred in database "MembershipsDB", table "dbo.Assignment", column 'Id'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:47dfd26a-e138-46ad-85b0-37134f930ac5
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2023-10-30 10:55:55.952 -06:00 [INF] Executed endpoint 'HTTP: POST /Schedules'
+2023-10-30 10:55:55.955 -06:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Schedule_Assignment_AssignmentId". The conflict occurred in database "MembershipsDB", table "dbo.Assignment", column 'Id'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:47dfd26a-e138-46ad-85b0-37134f930ac5
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at MembershipsNetCore.Infrastructure.Data.AppDbContext.SaveChangesAsync(CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Infrastructure\Data\AppDbContext.cs:line 29
+   at Ardalis.Specification.EntityFrameworkCore.RepositoryBase`1.SaveChangesAsync(CancellationToken cancellationToken)
+   at Ardalis.Specification.EntityFrameworkCore.RepositoryBase`1.AddAsync(T entity, CancellationToken cancellationToken)
+   at MembershipsNetCore.UseCases.Schedules.Create.CreateAssigmentHandler.Handle(CreateScheduleCommand request, CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.UseCases\Schedules\Create\CreateScheduleHandler.cs:line 25
+   at Ardalis.SharedKernel.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MembershipsNetCore.Web.Schedules.Create.Create.HandleAsync(CreateScheduleRequest request, CancellationToken cancellationToken) in C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web\Schedules\Create\Create.cs:line 37
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-10-30 10:55:55.970 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Schedules application/json 455 - 500 - text/plain;+charset=utf-8 4427.0475ms
+2023-10-30 10:57:48.760 -06:00 [INF] Request starting HTTP/2 POST https://localhost:44325/Schedules application/json 459
+2023-10-30 10:57:48.761 -06:00 [INF] Executing endpoint 'HTTP: POST /Schedules'
+2023-10-30 10:57:50.055 -06:00 [INF] Handling CreateScheduleCommand
+2023-10-30 10:57:50.056 -06:00 [INF] Property ScheduleList : [{"AssignmentId":12,"DayOfWeek":0,"HourOfDay":12,"QuarterOfHour":0,"$type":"ScheduleItem"},{"AssignmentId":12,"DayOfWeek":1,"HourOfDay":12,"QuarterOfHour":0,"$type":"ScheduleItem"},{"AssignmentId":12,"DayOfWeek":5,"HourOfDay":16,"QuarterOfHour":0,"$type":"ScheduleItem"},{"AssignmentId":12,"DayOfWeek":6,"HourOfDay":16,"QuarterOfHour":0,"$type":"ScheduleItem"}]
+2023-10-30 10:57:50.885 -06:00 [INF] Executed DbCommand (33ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Schedule] ([AssignmentId], [DayOfWeek], [HourOfDay], [QuarterOfHour])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);
+2023-10-30 10:57:51.028 -06:00 [INF] Executed DbCommand (13ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Schedule] ([AssignmentId], [DayOfWeek], [HourOfDay], [QuarterOfHour])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);
+2023-10-30 10:57:51.043 -06:00 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Schedule] ([AssignmentId], [DayOfWeek], [HourOfDay], [QuarterOfHour])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);
+2023-10-30 10:57:51.054 -06:00 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Schedule] ([AssignmentId], [DayOfWeek], [HourOfDay], [QuarterOfHour])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);
+2023-10-30 10:57:51.063 -06:00 [INF] Handled CreateScheduleCommand with Ardalis.Result.Result`1[System.Collections.Generic.List`1[System.Int32]] in 1005 ms
+2023-10-30 10:57:51.100 -06:00 [INF] Executed endpoint 'HTTP: POST /Schedules'
+2023-10-30 10:57:51.101 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Schedules application/json 459 - 200 - application/json 2340.9469ms

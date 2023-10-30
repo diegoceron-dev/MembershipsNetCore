@@ -12,6 +12,7 @@ public class Create : Endpoint<CreateAssignmentRequest, CreateAssignmentResponse
   {
     _mediator = mediator;
   }
+
   public override void Configure()
   {
     Post(CreateAssignmentRequest.Route);
