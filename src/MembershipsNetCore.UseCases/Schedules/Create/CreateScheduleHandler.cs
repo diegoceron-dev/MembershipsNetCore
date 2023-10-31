@@ -1,7 +1,6 @@
 ﻿using Ardalis.Result;
 using Ardalis.SharedKernel;
 using MembershipsNetCore.Core.ScheduleAggregate;
-using MembershipsNetCore.UseCases.Schedules.Create;
 
 namespace MembershipsNetCore.UseCases.Schedules.Create;
 

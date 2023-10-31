@@ -1,3 +1,5 @@
-﻿namespace MembershipsNetCore.UseCases.Schedules;
+﻿using MembershipsNetCore.Core.AssignmentAggregate;
 
-public record ScheduleDTO(int AssignmentId, int DayOfWeek, int HourOfDay, int QuarterOfHour);
+namespace MembershipsNetCore.UseCases.Schedules;
+
+public record ScheduleDTO(int Id, int DayOfWeek, int HourOfDay, int QuarterOfHour, Assignment Assignment); // , int AssignmentId, int TeacherId, int ClassId);

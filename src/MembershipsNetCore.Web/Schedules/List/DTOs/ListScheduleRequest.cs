@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MembershipsNetCore.Web.Assignments.List.DTOs;
+namespace MembershipsNetCore.Web.Schedules.List.DTOs;
 
-public class ListAssignmentsByFiltersRequest
+public class ListScheduleRequest
 {
-  public const string Route = "/Assignments";
+
+  public const string Route = "/Schedules";
 
   [Required]
   public int? TeacherId { get; set; }
@@ -13,8 +14,15 @@ public class ListAssignmentsByFiltersRequest
   public int? ClassId { get; set; }
 
   [Required]
+  public int? AssignmentId { get; set; }
+
+  [Required]
+  public int? ScheduleId { get; set; }
+
+  [Required]
   public int? Skip { get; set; }
 
   [Required]
   public int? Take { get; set; }
+
 }

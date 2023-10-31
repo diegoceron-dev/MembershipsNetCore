@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using Ardalis.Result;
+﻿using Ardalis.Result;
 using Ardalis.SharedKernel;
 using MembershipsNetCore.Core.AssignmentAggregate;
 using MembershipsNetCore.Core.AssignmentAggregate.Specifications;

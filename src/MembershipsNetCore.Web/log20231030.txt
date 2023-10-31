@@ -677,3 +677,209 @@ VALUES (@p0, @p1, @p2, @p3);
 2023-10-30 10:57:51.063 -06:00 [INF] Handled CreateScheduleCommand with Ardalis.Result.Result`1[System.Collections.Generic.List`1[System.Int32]] in 1005 ms
 2023-10-30 10:57:51.100 -06:00 [INF] Executed endpoint 'HTTP: POST /Schedules'
 2023-10-30 10:57:51.101 -06:00 [INF] Request finished HTTP/2 POST https://localhost:44325/Schedules application/json 459 - 200 - application/json 2340.9469ms
+2023-10-30 19:43:08.571 -06:00 [INF] Registered 14 endpoints in 2162 milliseconds.
+2023-10-30 19:43:08.644 -06:00 [ERR] The route "POST:/Schedules" has 2 endpoints registered to handle requests!
+2023-10-30 19:44:54.032 -06:00 [INF] Registered 14 endpoints in 3182 milliseconds.
+2023-10-30 19:44:54.122 -06:00 [ERR] The route "POST:/Schedules" has 2 endpoints registered to handle requests!
+2023-10-30 19:51:59.840 -06:00 [INF] Registered 14 endpoints in 2397 milliseconds.
+2023-10-30 19:51:59.913 -06:00 [ERR] The route "POST:/Schedules" has 2 endpoints registered to handle requests!
+2023-10-30 19:54:41.099 -06:00 [INF] Registered 14 endpoints in 2161 milliseconds.
+2023-10-30 19:54:41.176 -06:00 [ERR] The route "POST:/Schedules" has 2 endpoints registered to handle requests!
+2023-10-30 20:04:11.611 -06:00 [INF] Registered 14 endpoints in 3080 milliseconds.
+2023-10-30 20:04:11.725 -06:00 [ERR] The route "POST:/Schedules" has 2 endpoints registered to handle requests!
+2023-10-30 20:09:42.046 -06:00 [INF] Registered 14 endpoints in 6305 milliseconds.
+2023-10-30 20:09:42.142 -06:00 [ERR] The route "POST:/Schedules" has 2 endpoints registered to handle requests!
+2023-10-30 20:13:43.633 -06:00 [INF] Registered 14 endpoints in 2211 milliseconds.
+2023-10-30 20:13:49.075 -06:00 [INF] Executed DbCommand (56ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-30 20:13:49.232 -06:00 [INF] Executed DbCommand (126ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-10-30 20:13:49.778 -06:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-30 20:13:49.941 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-30 20:13:49.942 -06:00 [INF] Hosting environment: Development
+2023-10-30 20:13:49.942 -06:00 [INF] Content root path: C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web
+2023-10-30 20:13:50.003 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger - -
+2023-10-30 20:13:50.257 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/index.html - -
+2023-10-30 20:13:50.268 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger - - - 302 - - 270.3006ms
+2023-10-30 20:13:50.775 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/index.html - - - 200 - text/html;+charset=utf-8 518.3899ms
+2023-10-30 20:13:50.825 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - -
+2023-10-30 20:13:50.833 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - - - 200 12376 application/javascript;+charset=utf-8 6.9257ms
+2023-10-30 20:13:51.332 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_vs/browserLink - -
+2023-10-30 20:13:51.373 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 40.8599ms
+2023-10-30 20:13:51.712 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - -
+2023-10-30 20:13:51.809 -06:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-10-30 20:13:53.768 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - - - 200 - application/json;+charset=utf-8 2055.3781ms
+2023-10-30 20:14:42.881 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/Schedules - -
+2023-10-30 20:14:42.919 -06:00 [INF] Executing endpoint 'HTTP: GET /Schedules'
+2023-10-30 20:14:43.333 -06:00 [INF] Handling ListScheduleQuery
+2023-10-30 20:14:43.335 -06:00 [INF] Property Skip : null
+2023-10-30 20:14:43.336 -06:00 [INF] Property Take : null
+2023-10-30 20:14:43.337 -06:00 [INF] Property teacherId : null
+2023-10-30 20:14:43.338 -06:00 [INF] Property classId : null
+2023-10-30 20:14:43.339 -06:00 [INF] Property scheduleId : null
+2023-10-30 20:14:43.340 -06:00 [INF] Property assignmentId : null
+2023-10-30 20:14:43.955 -06:00 [INF] Executed DbCommand (79ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AssignmentId], [s].[DayOfWeek], [s].[HourOfDay], [s].[QuarterOfHour], [a].[Id], [a].[ClassId], [a].[DateEnd], [a].[DateInit], [a].[TeacherId], [t].[Id], [t].[PersonId], [p].[Id], [p].[Age], [p].[Email], [p].[FirstName], [p].[LastName], [p].[Status], [c].[Id], [c].[Name], [c].[Status]
+FROM [Schedule] AS [s]
+INNER JOIN [Assignment] AS [a] ON [s].[AssignmentId] = [a].[Id]
+INNER JOIN [Teacher] AS [t] ON [a].[TeacherId] = [t].[Id]
+INNER JOIN [Person] AS [p] ON [t].[PersonId] = [p].[Id]
+INNER JOIN [Class] AS [c] ON [a].[ClassId] = [c].[Id]
+2023-10-30 20:14:44.263 -06:00 [INF] Handled ListScheduleQuery with Ardalis.Result.Result`1[System.Collections.Generic.IEnumerable`1[MembershipsNetCore.UseCases.Schedules.ScheduleDTO]] in 923 ms
+2023-10-30 20:14:44.274 -06:00 [INF] Executed endpoint 'HTTP: GET /Schedules'
+2023-10-30 20:14:44.283 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/Schedules - - - 204 - - 1402.3920ms
+2023-10-30 20:28:16.328 -06:00 [INF] Registered 14 endpoints in 2729 milliseconds.
+2023-10-30 20:28:19.003 -06:00 [INF] Executed DbCommand (63ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-30 20:28:19.170 -06:00 [INF] Executed DbCommand (131ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-10-30 20:28:19.658 -06:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-30 20:28:19.876 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-30 20:28:19.878 -06:00 [INF] Hosting environment: Development
+2023-10-30 20:28:19.878 -06:00 [INF] Content root path: C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web
+2023-10-30 20:28:19.943 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger - -
+2023-10-30 20:28:20.223 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/index.html - -
+2023-10-30 20:28:20.235 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger - - - 302 - - 295.7063ms
+2023-10-30 20:28:20.732 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/index.html - - - 200 - text/html;+charset=utf-8 504.9871ms
+2023-10-30 20:28:20.781 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - -
+2023-10-30 20:28:20.801 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - - - 200 12376 application/javascript;+charset=utf-8 11.5116ms
+2023-10-30 20:28:20.999 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_vs/browserLink - -
+2023-10-30 20:28:21.038 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 43.5603ms
+2023-10-30 20:28:21.734 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - -
+2023-10-30 20:28:21.762 -06:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-10-30 20:28:23.299 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - - - 200 - application/json;+charset=utf-8 1565.0897ms
+2023-10-30 20:29:03.333 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/Schedules - -
+2023-10-30 20:29:03.367 -06:00 [INF] Executing endpoint 'HTTP: GET /Schedules'
+2023-10-30 20:29:03.589 -06:00 [INF] Handling ListScheduleQuery
+2023-10-30 20:29:03.592 -06:00 [INF] Property Skip : null
+2023-10-30 20:29:03.593 -06:00 [INF] Property Take : null
+2023-10-30 20:29:03.594 -06:00 [INF] Property teacherId : null
+2023-10-30 20:29:03.594 -06:00 [INF] Property classId : null
+2023-10-30 20:29:03.595 -06:00 [INF] Property scheduleId : null
+2023-10-30 20:29:03.596 -06:00 [INF] Property assignmentId : null
+2023-10-30 20:29:04.662 -06:00 [INF] Executed DbCommand (69ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AssignmentId], [s].[DayOfWeek], [s].[HourOfDay], [s].[QuarterOfHour], [a].[Id], [a].[ClassId], [a].[DateEnd], [a].[DateInit], [a].[TeacherId], [t].[Id], [t].[PersonId], [p].[Id], [p].[Age], [p].[Email], [p].[FirstName], [p].[LastName], [p].[Status], [c].[Id], [c].[Name], [c].[Status]
+FROM [Schedule] AS [s]
+INNER JOIN [Assignment] AS [a] ON [s].[AssignmentId] = [a].[Id]
+INNER JOIN [Teacher] AS [t] ON [a].[TeacherId] = [t].[Id]
+INNER JOIN [Person] AS [p] ON [t].[PersonId] = [p].[Id]
+INNER JOIN [Class] AS [c] ON [a].[ClassId] = [c].[Id]
+2023-10-30 20:29:04.925 -06:00 [INF] Handled ListScheduleQuery with Ardalis.Result.Result`1[System.Collections.Generic.IEnumerable`1[MembershipsNetCore.UseCases.Schedules.ScheduleDTO]] in 1328 ms
+2023-10-30 20:29:04.936 -06:00 [INF] Executed endpoint 'HTTP: GET /Schedules'
+2023-10-30 20:29:04.943 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/Schedules - - - 204 - - 1610.5206ms
+2023-10-30 20:29:39.180 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/Schedules - -
+2023-10-30 20:29:39.183 -06:00 [INF] Executing endpoint 'HTTP: GET /Schedules'
+2023-10-30 20:29:41.881 -06:00 [INF] Handling ListScheduleQuery
+2023-10-30 20:29:41.883 -06:00 [INF] Property Skip : null
+2023-10-30 20:29:41.884 -06:00 [INF] Property Take : null
+2023-10-30 20:29:41.885 -06:00 [INF] Property teacherId : null
+2023-10-30 20:29:41.886 -06:00 [INF] Property classId : null
+2023-10-30 20:29:41.887 -06:00 [INF] Property scheduleId : null
+2023-10-30 20:29:41.888 -06:00 [INF] Property assignmentId : null
+2023-10-30 20:29:54.056 -06:00 [INF] Executed DbCommand (60ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AssignmentId], [s].[DayOfWeek], [s].[HourOfDay], [s].[QuarterOfHour], [a].[Id], [a].[ClassId], [a].[DateEnd], [a].[DateInit], [a].[TeacherId], [t].[Id], [t].[PersonId], [p].[Id], [p].[Age], [p].[Email], [p].[FirstName], [p].[LastName], [p].[Status], [c].[Id], [c].[Name], [c].[Status]
+FROM [Schedule] AS [s]
+INNER JOIN [Assignment] AS [a] ON [s].[AssignmentId] = [a].[Id]
+INNER JOIN [Teacher] AS [t] ON [a].[TeacherId] = [t].[Id]
+INNER JOIN [Person] AS [p] ON [t].[PersonId] = [p].[Id]
+INNER JOIN [Class] AS [c] ON [a].[ClassId] = [c].[Id]
+2023-10-30 20:30:59.144 -06:00 [INF] Handled ListScheduleQuery with Ardalis.Result.Result`1[System.Collections.Generic.IEnumerable`1[MembershipsNetCore.UseCases.Schedules.ScheduleDTO]] in 77256 ms
+2023-10-30 20:31:32.914 -06:00 [INF] Registered 14 endpoints in 2977 milliseconds.
+2023-10-30 20:31:35.933 -06:00 [INF] Executed DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-30 20:31:36.088 -06:00 [INF] Executed DbCommand (126ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-10-30 20:31:36.626 -06:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-30 20:31:36.790 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-30 20:31:36.791 -06:00 [INF] Hosting environment: Development
+2023-10-30 20:31:36.792 -06:00 [INF] Content root path: C:\Users\diego\netcore\MembershipsNetCore\src\MembershipsNetCore.Web
+2023-10-30 20:31:36.844 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger - -
+2023-10-30 20:31:37.102 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/index.html - -
+2023-10-30 20:31:37.122 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger - - - 302 - - 279.4933ms
+2023-10-30 20:31:37.633 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/index.html - - - 200 - text/html;+charset=utf-8 530.6538ms
+2023-10-30 20:31:37.679 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - -
+2023-10-30 20:31:37.690 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_framework/aspnetcore-browser-refresh.js - - - 200 12376 application/javascript;+charset=utf-8 8.8210ms
+2023-10-30 20:31:37.940 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/_vs/browserLink - -
+2023-10-30 20:31:37.994 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 53.9549ms
+2023-10-30 20:31:38.938 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - -
+2023-10-30 20:31:38.972 -06:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-10-30 20:31:40.468 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/swagger/v1/swagger.json - - - 200 - application/json;+charset=utf-8 1530.7748ms
+2023-10-30 20:33:06.218 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44325/Schedules - -
+2023-10-30 20:33:06.261 -06:00 [INF] Executing endpoint 'HTTP: GET /Schedules'
+2023-10-30 20:33:15.189 -06:00 [INF] Handling ListScheduleQuery
+2023-10-30 20:33:15.190 -06:00 [INF] Property Skip : null
+2023-10-30 20:33:15.190 -06:00 [INF] Property Take : null
+2023-10-30 20:33:15.191 -06:00 [INF] Property teacherId : null
+2023-10-30 20:33:15.191 -06:00 [INF] Property classId : null
+2023-10-30 20:33:15.192 -06:00 [INF] Property scheduleId : null
+2023-10-30 20:33:15.192 -06:00 [INF] Property assignmentId : null
+2023-10-30 20:33:16.092 -06:00 [INF] Executed DbCommand (64ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AssignmentId], [s].[DayOfWeek], [s].[HourOfDay], [s].[QuarterOfHour], [a].[Id], [a].[ClassId], [a].[DateEnd], [a].[DateInit], [a].[TeacherId], [t].[Id], [t].[PersonId], [p].[Id], [p].[Age], [p].[Email], [p].[FirstName], [p].[LastName], [p].[Status], [c].[Id], [c].[Name], [c].[Status]
+FROM [Schedule] AS [s]
+INNER JOIN [Assignment] AS [a] ON [s].[AssignmentId] = [a].[Id]
+INNER JOIN [Teacher] AS [t] ON [a].[TeacherId] = [t].[Id]
+INNER JOIN [Person] AS [p] ON [t].[PersonId] = [p].[Id]
+INNER JOIN [Class] AS [c] ON [a].[ClassId] = [c].[Id]
+2023-10-30 20:33:16.349 -06:00 [INF] Handled ListScheduleQuery with Ardalis.Result.Result`1[System.Collections.Generic.IEnumerable`1[MembershipsNetCore.UseCases.Schedules.ScheduleDTO]] in 1155 ms
+2023-10-30 20:33:18.176 -06:00 [INF] Executed endpoint 'HTTP: GET /Schedules'
+2023-10-30 20:33:18.188 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44325/Schedules - - - 200 - application/json 11969.8801ms
